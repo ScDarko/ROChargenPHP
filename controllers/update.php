@@ -68,7 +68,7 @@ class Update_Controller extends Controller {
 			"Hats view id",
 			$buffer,
 			$error,
-			DB::$path . "mobs.php"
+			DB::$path . "hats.php"
 		);
 	}
 
