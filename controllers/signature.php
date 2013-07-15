@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @fileoverview avatar.php, display an avatar with player informations
+* @fileoverview signature.php, display a signature with player informations
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
 * @version 1.0.0
 */
