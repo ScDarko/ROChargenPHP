@@ -7,7 +7,6 @@ ROChargenPHP
 > So this tool comes at the rescue, parsing game data to render as an image the
 > character/monster of your choice, base on your database or direct informations.
 
----------
 
 It required PHP5 with the PDO driver installed.
 All the settings are set in index.php file.
@@ -18,7 +17,7 @@ Features
 - Generator
     * Support .spr, .act, .pal, .grf files
     * A character is fully render (class, head, hats, palettes, weapon, shield, robes, mount) and you
-	can set the action, direction, animation easily.
+    can set the action, direction, animation easily.
 	* Generator for Character, Character head only, Monsters, Homunculus, Avatar and Signature.
 	* Cache system if needed
 	* Emblem loader
@@ -43,13 +42,13 @@ Example:
 ```
 
 Will display KeyWorld's avatar.
-If you don't have url-rewriting in your host the link you will have to use is:
+If you don't have url-rewriting in your host the link you will have to use:
 ```
 	http://www.example.com/ROChargenPHP/index.php/avatar/KeyWorld
 ```
 
 You can change the default link by modify the array *$routes* in the *index.php* file:
-```
+```php
 $routes['/avatar/(.*)']              = 'Avatar';
 $routes['/character/(.*)']           = 'Character';
 $routes['/characterhead/(.*)']       = 'CharacterHead';
@@ -81,6 +80,24 @@ $img  = $chargen->render();
 imagepng($img);
 ```
 
+-------
+Avatar and signature
+-------
+![AvatarType1](http://upload.robrowser.com/chargen/avatar1.png) ![AvatarType2](http://upload.robrowser.com/chargen/avatar2.png) ![Signature](http://upload.robrowser.com/chargen/signature.png)
+
+-------
+Full character, or just the head
+-------
+![head](http://upload.robrowser.com/chargen/head-keyworld.png) ![body](http://upload.robrowser.com/chargen/body-keyworld.png)
+
+-------
+Monsters, without or with accessory
+-------
+![Eddga](http://upload.robrowser.com/chargen/1115.png) ![Poring](http://upload.robrowser.com/chargen/1002.png)
+
+-------
 License
 ---------
 http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+![License](http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png) 
