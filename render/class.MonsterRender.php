@@ -49,9 +49,9 @@ class MonsterRender extends RORender
 	{
 		// Initialised the image
 		$img = imagecreatetruecolor( $this->image_size[0], $this->image_size[1] );
-		imagefill( $img, 0, 0, imagecolorallocate($img, 255, 255, 255) );
 		imagealphablending( $img, false);
 		imagesavealpha( $img, true);
+		imagefill( $img, 0, 0, imagecolorallocatealpha($img, 0xff, 0xff, 0xff, 0x7f) );
 
 		$view = $this->param;
 
