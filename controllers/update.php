@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @fileoverview avatar.php, display an avatar with player informations
+* @fileoverview update.php, display an avatar with player informations
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
 * @version 1.0.0
 */
@@ -91,7 +91,7 @@ class Update_Controller extends Controller {
 		), $error );
 
 		$this->Output(
-			"Hats view id",
+			"Monsters view id",
 			$buffer,
 			$error,
 			DB::$path . "mobs.php"
