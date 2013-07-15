@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @fileoverview character.php, display character
+* @fileoverview characterhead.php, display character's head (only)
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
 * @version 1.0.0
 */
