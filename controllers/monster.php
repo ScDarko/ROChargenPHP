@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @fileoverview character.php, display character
+* @fileoverview monster.php, display a monster
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
 * @version 1.0.0
 */
