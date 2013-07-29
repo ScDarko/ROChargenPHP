@@ -53,7 +53,7 @@ Controller::$password =     "ragnarok"           ;   // Database Pass
 
 // No write access to cache directory ? disable cache.
 if( Cache::$time && !is_writable(Cache::$path)) {
-  Cache::$time = 0;
+	Cache::$time = 0;
 }
 if( Client::$AutoExtract && !is_writable(Client::$path . 'data/')) {
 	Client::$AutoExtract = false;
