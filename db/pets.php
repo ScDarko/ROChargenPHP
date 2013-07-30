@@ -47,5 +47,3 @@ return array(
 	10038 => 'IMP_뿔보호대.act',
 	10039 => 'MARIN_대만책가방.act'
 );
-
-?>

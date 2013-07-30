@@ -760,5 +760,3 @@ return array(
 	)
 
 );
-
-?>

@@ -13,9 +13,7 @@ ob_start();
 
 // Error manager
 ini_set('display_errors', 0);
-error_reporting(0);
-//ini_set('display_errors', 1);
-//error_reporting(E_ALL);
+error_reporting(E_ALL);
 
 
 
@@ -24,11 +22,16 @@ define('__ROOT__', dirname(__FILE__) . '/');
 
 
 // Loading CORE files
+require_once( __ROOT__ . 'core/class.Debug.php');
 require_once( __ROOT__ . 'core/class.Controller.php');
 require_once( __ROOT__ . 'core/class.Cache.php');
 require_once( __ROOT__ . 'core/class.Client.php');
 require_once( __ROOT__ . 'core/class.DB.php');
 
+
+
+// Set on the debug
+//Debug::enable();
 
 
 
@@ -51,12 +54,21 @@ Controller::$password =     "ragnarok"           ;   // Database Pass
 
 
 
-// No write access to cache directory ? disable cache.
-if( Cache::$time && !is_writable(Cache::$path)) {
+// No write access to directory ? disable cache.
+if( Cache::$time && !is_writable(Cache::$path) ) {
 	Cache::$time = 0;
+	Debug::write('Disable Cache system, don\'t have write acess to "'. Cache::$path .'".', 'error');
 }
-if( Client::$AutoExtract && !is_writable(Client::$path . 'data/')) {
+if( Client::$AutoExtract && !is_writable(Client::$path . 'data/') ) {
 	Client::$AutoExtract = false;
+	Debug::write('Disable GRF auto-extract mode, don\'t have write access to "'. Client::$path  .'data/".', 'error');
+}
+
+
+
+// Don't cache images when debug mode is on
+if( Debug::isEnable() ) {
+	Cache::$time = 0;
 }
 
 
@@ -71,12 +83,17 @@ $routes['/signature/(.*)']           = 'Signature';
 //$routes['/update/(hats|mobs|robes)'] = 'Update'; // Uncomment this line if you want to perform updates by updating lua files.
 
 
-// Initialize client
-Client::init();
+
+try {
+	// Initialize client and process
+	Client::init();
+	Controller::run($routes);
+}
+catch(Exception $e)
+{
+	Debug::write( $e->getMessage(), 'error');
+}
 
 
-// Run controller
-Controller::run($routes);
-
-
-?>
+// Debug
+Debug::output();

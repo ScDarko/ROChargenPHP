@@ -4387,5 +4387,3 @@ return array(
 	4684 => 'Phoenix_Wing',
 	4685 => 'Baby_Panda_Hat'
 );
-
-?>

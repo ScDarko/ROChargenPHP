@@ -158,4 +158,3 @@ return array(
 	//Job_Kagerou	4211
 	//Job_Oboro	4212
 );
-?>

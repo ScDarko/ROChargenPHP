@@ -238,12 +238,9 @@ return array(
 {$content}
 );
 
-?>
 EOF;
 
 		file_put_contents( $path, $buffer );
 	}
 
 }
-
-?>

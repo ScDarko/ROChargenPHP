@@ -29,6 +29,7 @@ class Controller
 	{
 		if( empty($_SERVER['QUERY_STRING']) ) {
 			if( empty($_SERVER['PATH_INFO']) ) {
+				Debug::write('No route found.', 'error');
 				return false;
 			}
 			$query = $_SERVER['PATH_INFO'];
@@ -36,6 +37,8 @@ class Controller
 		else {
 			$query = $_SERVER['QUERY_STRING'];
 		}
+
+		Debug::write('Searching route "'. $query .'".', 'title');
 
 		foreach( $routes as $path => $controller ) {
 		
@@ -45,6 +48,8 @@ class Controller
 				$className = $controller . "_Controller";
 	
 				if( file_exists($fileName) ) {
+
+					Debug::write('Running controller "'. $controller .'".', 'info');
 
 					require_once($fileName);
 					call_user_func_array(
@@ -57,6 +62,7 @@ class Controller
 			}
 		}
 
+		Debug::write('Route not found.', 'error');
 		return false;
 	}
 
@@ -66,10 +72,19 @@ class Controller
 	 */
 	public function loadDatabase()
 	{
-		$this->db   = new PDO(
-			"mysql:host=". self::$hostname .";dbname=". self::$database,
-			self::$username, self::$password
-		);
+		Debug::write('Connecting to DB....', 'title');
+
+		try {
+			$this->db   = new PDO(
+				"mysql:host=". self::$hostname .";dbname=". self::$database,
+				self::$username, self::$password
+			);
+		} catch (PDOException $e) {
+			Debug::write('Connection to DB fail.' . $e->getMessage(), 'error');
+			return;
+		}
+
+		Debug::write('Connection success.', 'success');
 	}
 
 
@@ -79,7 +94,6 @@ class Controller
 	public function query($query, $args=array()) {
 		$req = $this->db->prepare($query);
 		$req->execute($args);
-		return $req->fetch();
+		return $req->fetchAll();
 	}
 }
-?>

@@ -70,5 +70,3 @@ class Monster_Controller extends Controller {
 	}
 
 }
-
-?>

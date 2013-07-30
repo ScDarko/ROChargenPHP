@@ -92,4 +92,3 @@ class CharacterHeadRender extends RORender
 	}
 }
 
-?>

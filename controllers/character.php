@@ -85,7 +85,7 @@ class Character_Controller extends Controller {
 				die($content);
 			}
 
-			$data = array(
+			return array(
 				"class"         =>  0,
 				"clothes_color" =>  0,
 				"hair"          =>  2,
@@ -100,7 +100,7 @@ class Character_Controller extends Controller {
 			);
 		}
 
-		return $data;
+		return $data[0];
 	}
 
 
@@ -124,5 +124,3 @@ class Character_Controller extends Controller {
 	}
 
 }
-
-?>

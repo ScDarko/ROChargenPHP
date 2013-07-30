@@ -256,4 +256,3 @@ class CharacterRender extends RORender
 	}
 }
 
-?>

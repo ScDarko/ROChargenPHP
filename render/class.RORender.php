@@ -300,4 +300,4 @@ abstract class RORender
 		return $pos;
 	}
 }
-?>
+

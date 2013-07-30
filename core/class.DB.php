@@ -220,4 +220,3 @@ final class DB
 		return true;
 	}
 }
-?>

@@ -74,5 +74,3 @@ class MonsterRender extends RORender
 		return $img;
 	}
 }
-
-?>

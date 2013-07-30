@@ -119,4 +119,3 @@ function imagecreatefrombmpstring($data) {
 	return $img;
 }
 
-?>

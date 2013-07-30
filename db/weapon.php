@@ -39,4 +39,3 @@ return array(
 	"_°Ë_µµ³¢"       // sword + axe
 );
 
-?>
