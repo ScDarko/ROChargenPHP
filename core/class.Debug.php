@@ -63,9 +63,7 @@ final class Debug
 			echo '</style>';
 
 			echo '<h1>Trace output</h1>';
-			foreach( self::$messages as $msg ) {
-				echo $msg;
-			}
+			echo implode('', self::$messages);
 
 			if( !empty($img) ) {
 				echo '<h1>Result</h1>';
