@@ -181,7 +181,8 @@ final class DB
 		$sex  = self::$ascii_sex[$sex];
 
 		if( empty(self::$robes['list']) ) {
-			self::$robes['list'] = require_once( self::$path . 'robe.php');
+			self::$robes['list']    = require_once( self::$path . 'robe.php');
+			self::$robes['inherit'] = require_once( self::$path . 'inherit.robe.php');
 		}
 
 		if ( empty(self::$robes['list'][$robe_id]) || !isset(self::$body[$job_id]) ) {
@@ -212,7 +213,10 @@ final class DB
 			self::$robes[$size][$sex] = require_once( self::$path . $size . '_'. $_sex .'.robe.php');
 		}
 
-		$table = self::$robes[$size][$sex];
+		$table  = self::$robes[$size][$sex];
+
+		if( !empty(self::$robes['inherit'][$job_id]) )
+			$job_id = self::$robes['inherit'][$job_id];
 
 		if ( empty($table[$job_id]) || empty($table[$job_id][$action]) ) return true;
 		if ( in_array( $animation, $table[$job_id][$action] ) ) return false;

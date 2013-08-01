@@ -106,6 +106,7 @@ class Update_Controller extends Controller {
 	{
 		$this->needFiles(
 			"lua files/skillinfoz/jobinheritlist.lua",
+			"lua files/spreditinfo/2dlayerdir_f.lua",
 			"lua files/spreditinfo/biglayerdir_female.lua",
 			"lua files/spreditinfo/biglayerdir_male.lua",
 			"lua files/spreditinfo/smalllayerdir_female.lua",
@@ -122,6 +123,28 @@ class Update_Controller extends Controller {
 		foreach( $matches[1] as $index => $name ) {
 			$keys[ $name ] = $matches[4][$index];
 		}
+
+
+		// Inherit
+		$extends = file_get_contents( Client::$path . "lua files/spreditinfo/2dlayerdir_f.lua");
+		preg_match_all( "/\[JOBID\.JT_([^\]]+)\]\s=\sJOBID\.JT_([^\,]+)/", $extends, $matches );
+		$buffer = "";
+		$error  = "";
+
+		foreach( $matches[1] as $index => $name ) {
+			if( !isset($keys[ $name ]) ) {
+				$error .= "// Fail to find '". $name . "'\n";
+				continue;
+			}
+			$buffer .= "\t". $keys[ $name ] ." => ". $keys[ $matches[2][$index] ] .",\n";
+		}
+
+		$this->Output(
+			"Robe inherit Job",
+			$buffer,
+			$error,
+			DB::$path . 'inherit.robe.php'
+		);
 
 
 		$list = array(
