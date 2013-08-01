@@ -59,7 +59,7 @@ class Action
 	/**
 	 * Adding exclusively for the chargen to spee up the process.
 	 */
-	public function getAnimation($action, $animation, $doridori=-1) {
+	public function getAnimation($action, &$animation, $doridori=-1) {
 		// Skip header
 		fseek( $this->fp, 0x4, SEEK_SET);
 

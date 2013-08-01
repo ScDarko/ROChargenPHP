@@ -166,7 +166,7 @@ abstract class RORender
 
 		// Doridori mod only with some conditions
 		if (
-				get_class($this) === 'CharacterHeadRender' ||         // Only head
+				get_class($this) === 'CharacterHeadRender' ||       // Only head
 			(
 				get_class($this) === 'CharacterRender' &&           // Only for character
 				!empty($param['head']) &&                           // Only for head
@@ -181,7 +181,7 @@ abstract class RORender
 		// Basique
 		else
 		{
-			$anim     =  $this->body_animation;
+			$anim     =  &$this->body_animation;
 			$doridori = -1;
 		}
 
