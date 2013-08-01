@@ -60,8 +60,9 @@ abstract class RORender
 	/**
 	 * Image options, size and dot reference
 	 */
-	public $image_size    = array(200,200);
-	public $dot_reference = array(100,180);
+	public $image_size              = array(200,200);
+	public $dot_reference           = array(100,180);
+	static public $background_color = array(0xff, 0xff, 0xff, 0x7f); // RGBA
 
 
 	/**
@@ -79,6 +80,38 @@ abstract class RORender
 		{
 			$this->param[$name] = $value;
 		}
+	}
+
+
+	/**
+	 * Creating Image
+	 */
+	protected function createImage( $width=0, $height=0 )
+	{
+		// Default value
+		if( empty($width) && empty($height) ) {
+			$width  = $this->image_size[0];
+			$height = $this->image_size[1];
+		}
+
+		// Create Image
+		$img = imagecreatetruecolor( $width, $height );
+		imagealphablending( $img, false);
+		imagesavealpha( $img, true);
+
+		// Set on the background
+		$transparent = imagecolorallocatealpha(
+			$img,
+			self::$background_color[0],
+			self::$background_color[1],
+			self::$background_color[2],
+			self::$background_color[3]
+		);
+
+		imagefill( $img, 0, 0, $transparent );
+		imagecolortransparent( $img, $transparent );
+
+		return $img;
 	}
 
 
@@ -191,10 +224,7 @@ abstract class RORender
 		if ( !$render_onTop )
 		{
 			$_img  = $img;
-			$img   = imagecreatetruecolor( $this->image_size[0], $this->image_size[1] );
-			$white = imagecolorallocatealpha($img, 255, 255, 255, 127);
-			imagefill($img, 0, 0, $white );
-			imagecolortransparent( $img, $white );
+			$img   = $this->createImage();
 		}
 
 
@@ -211,7 +241,7 @@ abstract class RORender
 
 
 				// Build sprite image
-				$image  = $spr->getImage( $index, $layer->is_mirror, $layer->color );
+				$image  = $spr->getImage( $index, $layer->is_mirror, $layer->color, self::$background_color );
 
 				$width  = imagesx($image);
 				$height = imagesy($image);
@@ -231,11 +261,7 @@ abstract class RORender
 					$h   = $height * $scale[1];
 
 					// Copy image to new layer (resize)
-					$tmp         = imagecreatetruecolor( $w, $h );
-					$transparent = imagecolorallocatealpha($img, 255, 255, 255, 127);
-
-					imagefill( $tmp, 0, 0, $transparent );
-					imagecolortransparent( $tmp, $transparent );
+					$tmp = $this->createImage($w, $h);
 					imagecopyresampled( $tmp, $image, 0, 0, 0, 0, $w, $h, $width, $height );
 					imagedestroy( $image );
 
@@ -247,11 +273,7 @@ abstract class RORender
 				// Convert palette to true color
 				else if ( !imageistruecolor($image) )
 				{
-					$tmp         = imagecreatetruecolor( $width, $height );
-					$transparent = imagecolorallocatealpha($img, 255, 255, 255, 127);
-					
-					imagefill( $tmp, 0, 0, $transparent );
-					imagecolortransparent( $tmp, $transparent );
+					$tmp = $this->createImage($width, $height);
 					imagecopy( $tmp, $image, 0, 0, 0, 0, $width, $height );
 					imagedestroy( $image );
 
@@ -261,7 +283,7 @@ abstract class RORender
 				// Apply a rotation
 				if ( !empty($layer->angle) )
 				{
-					$image  = imagerotate( $image, -$layer->angle, $transparent, 1 );
+					$image  = imagerotate( $image, -$layer->angle, imagecolortransparent($image), 1 );
 					$width  = imagesx($image);
 					$height = imagesy($image);
 				}

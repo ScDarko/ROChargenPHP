@@ -199,7 +199,7 @@ class Sprite
 	/**
 	 * Return an image
 	 */
-	public function getImage( $index, $is_mirror = 0, $mult_color = array(1.0,1.0,1.0) )
+	public function getImage( $index, $is_mirror = 0, $mult_color = array(1.0,1.0,1.0), $bg_color = array(255,255,255,127) )
 	{
 		$frame  = $this->frames[$index];
 		$width  = $frame->width;
@@ -264,12 +264,12 @@ class Sprite
 				}
 			}
 			// Replace white with a hacked white
-			$index = imagecolorexact( $img, 255, 255, 255 );
+			$index = imagecolorexact( $img, $bg_color[0], $bg_color[1], $bg_color[2] );
 			if ( $index > -1 )
-				imagecolorset( $img, $index , 255, 254, 255 );
+				imagecolorset( $img, $index, $bg_color[0], ( $bg_color[1] >= 255 ? $bg_color[1] - 1 : $bg_color[1] + 1 ), $bg_color[2] );
 
 			// Set white as transparent
-			imagecolorset( $img, 0 , 255, 255, 255 );
+			imagecolorset( $img, 0 , $bg_color[0], $bg_color[1], $bg_color[2] );
 			imagecolortransparent( $img, 0 );
 		}
 
@@ -277,7 +277,7 @@ class Sprite
 		// TODO: Buggy RGBA image (lol PHP GD lol...)
 		else {
 			$img   = imagecreatetruecolor( $width, $height );
-			$white = imagecolorallocate( $img, 255, 255, 255 );
+			$white = imagecolorallocatealpha( $img, $bg_color[0], $bg_color[1], $bg_color[2], $bg_color[3] );
 			imagefill( $img, 0, 0, $white );
 			imagecolortransparent( $img, $white );
 
