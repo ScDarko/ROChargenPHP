@@ -181,7 +181,24 @@ abstract class RORender
 		// Basique
 		else
 		{
-			$anim     =  &$this->body_animation;
+			// All animations are link to the body animation
+			// If we update it, we have to update others.
+			if( !empty($param['body']) ) {
+				$anim = &$this->body_animation;
+
+				// Durty trick with doridori on body.
+				if( get_class($this) === 'CharacterRender' &&
+					($this->action === CharacterRender::ACTION_IDLE ||
+				 	 $this->action === CharacterRender::ACTION_SIT )
+				) {
+					$this->doridori %= 3;
+					$anim = $this->doridori;
+				}
+			}
+			else {
+				$anim =  $this->body_animation;
+			}
+
 			$doridori = -1;
 		}
 

@@ -112,7 +112,8 @@ class CharacterRender extends RORender
 		// Draw body, get head position
 		$pos = $this->renderImage( $img, array(
 			"path" => DB::get_body_path( $view['class'], $view['sex'], $view['option'] ), 
-			"pal"  => DB::get_body_pal_path( $view['class'], $view['sex'], $view['clothes_color'] )
+			"pal"  => DB::get_body_pal_path( $view['class'], $view['sex'], $view['clothes_color'] ),
+			"body" => true
 		));
 
 		// Draw Robe
