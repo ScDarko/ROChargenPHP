@@ -80,7 +80,7 @@ $routes['/characterhead/(.*)']       = 'CharacterHead';
 $routes['/avatar/(.*)']              = 'Avatar';
 $routes['/signature/(.*)']           = 'Signature';
 $routes['/monster/(\d+)']            = 'Monster';
-$routes['/generate/body=(F|M)-(\d+)-(\d+)/hair=(\d+)-(\d+)-(\d)/hats=(\d+)-(\d+)-(\d+)/equip=(\d+)-(\d+)-(\d+)/option=(\d+)/actdir=(\d+)-([0-7])-(\d+)'] = 'Generator';
+$routes['/generate/body=(F|M)-(\d+)-(\d+)/hair=(\d+)-(\d+)-(\d)/hats=(\d+)-(\d+)-(\d+)/equip=(\d+)-(\d+)-(\d+)/option=(\d+)/actdir=([0-7])-(\d+)-(\d+)'] = 'Generator';
 //$routes['/update/(hats|mobs|robes)'] = 'Update'; // Uncomment this line if you want to perform updates by updating lua files.
 
 
