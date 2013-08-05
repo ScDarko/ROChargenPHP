@@ -31,7 +31,7 @@ class Character_Controller extends Controller {
 	/**
 	 * Process entry
 	 */
-	public function process($pseudo)
+	public function process($pseudo, $action = -1, $animation = -1)
 	{
 		header('Content-type:image/png');
 		header('Cache-Control: max-age='. Cache::$time .', public');
@@ -47,7 +47,7 @@ class Character_Controller extends Controller {
 
 		// Find and render
 		$data = $this->getPlayerData($pseudo);
-		$this->render($data);
+		$this->render($data, $action, $animation);
 
 		// Cache
 		Cache::save();
@@ -107,12 +107,12 @@ class Character_Controller extends Controller {
 	/**
 	 * Render avatar
 	 */
-	private function render($data)
+	private function render($data, $action, $animation)
 	{
 		// Load Class and set parameters
 		$chargen                 =  new CharacterRender();
-		$chargen->action         =  CharacterRender::ACTION_READYFIGHT;
-		$chargen->direction      =  CharacterRender::DIRECTION_SOUTHEAST;
+		$chargen->action         =  $action    == -1 ? CharacterRender::ACTION_READYFIGHT   : intval($action);
+		$chargen->direction      =  $animation == -1 ? CharacterRender::DIRECTION_SOUTHEAST : intval($animation);
 		$chargen->body_animation =  4;
 		$chargen->doridori       =  0;
 
