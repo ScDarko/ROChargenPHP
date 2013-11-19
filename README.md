@@ -98,6 +98,6 @@ Monsters, without or with accessory
 -------
 License
 ---------
-http://creativecommons.org/licenses/by-nc-sa/3.0/
+http://creativecommons.org/licenses/by/3.0/
 
-![License](http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png) 
+![License](http://i.creativecommons.org/l/by/3.0/88x31.png) 
