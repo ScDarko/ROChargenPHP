@@ -81,7 +81,8 @@ class Controller
 			);
 		} catch (PDOException $e) {
 			Debug::write('Connection to DB fail.' . $e->getMessage(), 'error');
-			return;
+			Debug::output();
+			exit;
 		}
 
 		Debug::write('Connection success.', 'success');
