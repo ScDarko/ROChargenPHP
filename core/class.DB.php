@@ -15,8 +15,8 @@ final class DB
 	static private $shadow;
 
 	static private $ascii_sex = array(
-		"M" => "\xb3\xb2",
-		"F" => "\xbf\xa9"
+		"M" => "남",
+		"F" => "여"
 	);
 
 	static public $path = "db/";
