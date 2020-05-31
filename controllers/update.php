@@ -40,8 +40,8 @@ class Update_Controller extends Controller {
 	{
 		$args = func_get_args();
 		foreach( $args as $path ) {
-			if( !file_exists( Client::$path . $path ) ) {
-				exit('File "'. Client::$path . $path .'" not found.');
+			if ( Client::getFile( $path ) === false ) {
+				exit('File "'. $path .'" not found.');
 			}
 		}
 	}
@@ -55,11 +55,11 @@ class Update_Controller extends Controller {
 		$error  = "";
 		$buffer = $this->parse_easy(array(
 			"keys" => array(
-				"lua" => "lua files/datainfo/accessoryid.lua",
+				"lua" => "lua files/datainfo/accessoryid.lub",
 				"reg" => "/ACCESSORY_([a-zA-Z0-9_-]+)(\s+)?\=(\s+)?(\d+)(,)?/"
 			),
 			"vals" => array(
-				"lua" => "lua files/datainfo/accname.lua",
+				"lua" => "lua files/datainfo/accname.lub",
 				"reg" => "/\[ACCESSORY_IDs\.ACCESSORY_([a-zA-Z0-9_-]+)\](\s+)?=(\s+)?\"_(.*)\"(,)?/"
 			)
 		), $error );
@@ -81,11 +81,11 @@ class Update_Controller extends Controller {
 		$error  = "";
 		$buffer = $this->parse_easy(array(
 			"keys" => array(
-				"lua" => "lua files/datainfo/npcidentity.lua",
+				"lua" => "lua files/datainfo/npcidentity.lub",
 				"reg" => '/\["JT_([^"]+)"\](\s+)?\=(\s+)?(\d+)(,)?/'
 			),
 			"vals" => array(
-				"lua" => "lua files/datainfo/jobname.lua",
+				"lua" => "lua files/datainfo/jobname.lub",
 				"reg" => '/\[jobtbl\.JT_([^]]+)\](\s+)?=(\s+)?"([^"]+)"(,)?/'
 			)
 		), $error );
@@ -105,18 +105,18 @@ class Update_Controller extends Controller {
 	private function updateRobes()
 	{
 		$this->needFiles(
-			"lua files/skillinfoz/jobinheritlist.lua",
-			"lua files/spreditinfo/2dlayerdir_f.lua",
-			"lua files/spreditinfo/biglayerdir_female.lua",
-			"lua files/spreditinfo/biglayerdir_male.lua",
-			"lua files/spreditinfo/smalllayerdir_female.lua",
-			"lua files/spreditinfo/smalllayerdir_male.lua",
-			"lua files/spreditinfo/2dlayerdir_female.lua",
-			"lua files/spreditinfo/2dlayerdir_male.lua"
+			"lua files/skillinfoz/jobinheritlist.lub",
+			"lua files/spreditinfo/2dlayerdir_f.lub",
+			"lua files/spreditinfo/biglayerdir_female.lub",
+			"lua files/spreditinfo/biglayerdir_male.lub",
+			"lua files/spreditinfo/smalllayerdir_female.lub",
+			"lua files/spreditinfo/smalllayerdir_male.lub",
+			"lua files/spreditinfo/2dlayerdir_female.lub",
+			"lua files/spreditinfo/2dlayerdir_male.lub"
 		);
 
 		$keys      = array();
-		$keys_data = file_get_contents( Client::$path . "lua files/skillinfoz/jobinheritlist.lua");
+		$keys_data = file_get_contents( Client::$path . "lua files/skillinfoz/jobinheritlist.lub");
 
 		// JT_key = val,
 		preg_match_all( "/JT_([^\s]+)(\s+)?\=(\s+)?(\d+)(,)?/", $keys_data, $matches );
@@ -126,7 +126,7 @@ class Update_Controller extends Controller {
 
 
 		// Inherit
-		$extends = file_get_contents( Client::$path . "lua files/spreditinfo/2dlayerdir_f.lua");
+		$extends = file_get_contents( Client::$path . "lua files/spreditinfo/2dlayerdir_f.lub");
 		preg_match_all( "/\[JOBID\.JT_([^\]]+)\]\s=\sJOBID\.JT_([^\,]+)/", $extends, $matches );
 		$buffer = "";
 		$error  = "";
@@ -148,12 +148,12 @@ class Update_Controller extends Controller {
 
 
 		$list = array(
-			"big_F.robe.php"     => "lua files/spreditinfo/biglayerdir_female.lua",
-			"big_M.robe.php"     => "lua files/spreditinfo/biglayerdir_male.lua",
-			"small_F.robe.php"   => "lua files/spreditinfo/smalllayerdir_female.lua",
-			"small_M.robe.php"   => "lua files/spreditinfo/smalllayerdir_male.lua",
-			"2dlayer_F.robe.php" => "lua files/spreditinfo/2dlayerdir_female.lua",
-			"2dlayer_M.robe.php" => "lua files/spreditinfo/2dlayerdir_male.lua"
+			"big_F.robe.php"     => "lua files/spreditinfo/biglayerdir_female.lub",
+			"big_M.robe.php"     => "lua files/spreditinfo/biglayerdir_male.lub",
+			"small_F.robe.php"   => "lua files/spreditinfo/smalllayerdir_female.lub",
+			"small_M.robe.php"   => "lua files/spreditinfo/smalllayerdir_male.lub",
+			"2dlayer_F.robe.php" => "lua files/spreditinfo/2dlayerdir_female.lub",
+			"2dlayer_M.robe.php" => "lua files/spreditinfo/2dlayerdir_male.lub"
 		);
 
 		foreach( $list as $php_file => $lua_file ) {
@@ -183,14 +183,14 @@ class Update_Controller extends Controller {
 		$vals      = array();
 
 		// Parse keys
-		$keys_data = file_get_contents( Client::$path . $data['keys']['lua']);
+		$keys_data = file_get_contents( Client::getFile( $path . $data['keys']['lua']) );
 		preg_match_all( $data['keys']['reg'], $keys_data, $matches );
 		foreach( $matches[1] as $index => $name ) {
 			$keys[ $name ] = $matches[4][$index];
 		}
 
 		// Parse vals
-		$vals_data = file_get_contents( Client::$path . $data['vals']['lua']);
+		$vals_data = file_get_contents( Client::getFile( $path . $data['vals']['lua']) );
 		preg_match_all( $data['vals']['reg'], $vals_data, $matches );
 		foreach( $matches[1] as $index => $name ) {
 			if( !isset($keys[$name]) ) {
