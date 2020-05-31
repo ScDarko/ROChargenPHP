@@ -18,18 +18,18 @@ return array(
 	7 => "±â»ç",           // Knight
 	8 => "ÇÁ¸®½ºÆ®",     // priest
 	9 => "À§Àúµå",         // wizard
-	10 => "À§Àúµå",        // Blacksmith
+	10 => "Á¦Ã¶°ø",        // Blacksmith
 	11 => "ÇåÅÍ",          // Hunter
-	12 => "¾î¼¼½Å", // Assassion
+	12 => "¾î¼¼½Å", // Assassin
 	13 => "ÆäÄÚÆäÄÚ_±â»ç", // peco knight
-	14 => "Å©·ç",          // crusader
-	15 => "¸ùÅ©",          // monk
-	16 => "¼¼ÀÌÁö",    // sage
-	17 => "·Î±×",          // Rogue
-	18 => "¿¬±Ý¼ú»ç",    // Alchemist
-	19 => "¹Ùµå",          // bard
-	20 => "´í¼",         // dancer
-	21 => "ÆäÄÚÆäÄÚ_Å©·ç", // peco crusader
+	14 => "±â»ç",          // crusader
+	15 => "ÇÁ¸®½ºÆ®",          // monk
+	16 => "À§Àúµå",    // sage
+	17 => "¾î¼¼½Å",          // Rogue
+	18 => "Á¦Ã¶°ø",    // Alchemist
+	19 => "ÇåÅÍ",          // bard
+	20 => "ÇåÅÍ",         // dancer
+	21 => "ÆäÄÚÆäÄÚ_±â»ç", // peco crusader
 	22 => "°áÈ¥",          // wedding
 	23 => "½´ÆÛ³ëºñ½º",  // Super novice
 	24 => "°Ç³Ê",          // Gunslinger
@@ -50,13 +50,13 @@ return array(
 	4008 => "·Îµå³ªÀÌÆ®",  // Lord Knight
 	4009 => "ÇÏÀÌÇÁ¸®½ºÆ®", // High Priest
 	4010 => "ÇÏÀÌÀ§Àúµå",   // High Wizard
-	4011 => "È ÀÌÆ®½º¹Ì½º", // Whitesmith
+	4011 => "È­ÀÌÆ®½º¹Ì½º", // Whitesmith
 	4012 => "½º³ªÀÌÆÛ",      // Sniper
 	4013 => "¾î¼¼½ÅÅ©·Î½º", // Assassin Cross
-	4014 => "ÆäÄÚ·Î³ª",      // Peco Lord Knight
+	4014 => "·Îµå³ªÀÌÆ®",      // Peco Lord Knight
 	4015 => "ÆÈ¶óµò",        // Paladain
 	4016 => "Ã¨ÇÇ¿Â",        // Champion
-	4017 => "ÇÁ·ÎÆä¼",     // Professor
+	4017 => "ÇÁ·ÎÆä¼­",     // Professor
 	4018 => "½ºÅäÄ¿",      // Stalker
 	4019 => "Å©¸®¿¡ÀÌÅÍ",    // Creator
 	4020 => "Å©¶ó¿î",        // Clown
@@ -84,77 +84,81 @@ return array(
 	4040 => "·Î±×",           // Rogue
 	4041 => "¿¬±Ý¼ú»ç",     // Alchemist
 	4042 => "¹Ùµå",           // bard
-	4043 => "´í¼",          // dancer
+	4043 => "¹«Èñ",          // dancer
 	4044 => "ÆäÄÚÆäÄÚ_Å©·ç",  // peco crusader
 	4045 => "½´ÆÛ³ëºñ½º",   // Super novice
 
 	4046 => "ÅÂ±Ç¼Ò³â",       // Taekwon
-	4047 => "±Ç¼º`",        // Star Gladiator
+	4047 => "±Ç¼º",        // Star Gladiator
 	4048 => "±Ç¼º",         // Flying star gladiator
 	4049 => "¼Ò¿ï¸µÄ¿",     // Soul linker
 
 	// 3rd
-	4054 => "·Îµå³ªÀÌÆ®",      // rune knight
-	4055 => "ÇÏÀÌÀ§Àúµå",      // warlock
-	4056 => "½º³ªÀÌÆÛ",        // ranger
-	4057 => "ÇÏÀÌÇÁ¸®½ºÆ®",   // arch bishop
-	4058 => "È ÀÌÆ®½º¹Ì½º",  // mechanic
-	4059 => "¾î¼¼½ÅÅ©·Î½º", // guillotine
-	4060 => "·Îµå³ªÀÌÆ®",      // rune knight
-	4061 => "ÇÏÀÌÀ§Àúµå",      // warlock
-	4062 => "½º³ªÀÌÆÛ",        // ranger
-	4063 => "ÇÏÀÌÇÁ¸®½ºÆ®",   // arch bishop
-	4064 => "È ÀÌÆ®½º¹Ì½º",  // mechanic
-	4065 => "¾î¼¼½ÅÅ©·Î½º", // guillotine
-	4066 => "ÆÈ¶óµò",          // royal guard
-	4067 => "ÇÁ·ÎÆä¼",       // sorcerer
-	4068 => "Å©¶ó¿î",          // minstrel
-	4069 => "Áý½Ã",          // wanderer
-	4070 => "Ã¨ÇÇ¿Â",          // sura
-	4071 => "Å©¸®¿¡ÀÌÅÍ",      // genetic
-	4072 => "½ºÅäÄ¿",        // shadow chaser
-	4073 => "ÆÈ¶óµò",          // royal guard
-	4074 => "ÇÁ·ÎÆä¼",       // sorcerer
-	4075 => "Å©¶ó¿î",          // minstrel
-	4076 => "Áý½Ã",          // wanderer
-	4077 => "Ã¨ÇÇ¿Â",          // sura
-	4078 => "Å©¸®¿¡ÀÌÅÍ",      // genetic
-	4079 => "½ºÅäÄ¿",        // shadow chaser
+	4054 => "·é³ªÀÌÆ®",      // rune knight
+	4055 => "¿ö·Ï",      // warlock
+	4056 => "·¹ÀÎÀú",        // ranger
+	4057 => "¾ÆÅ©ºñ¼ó",   // arch bishop
+	4058 => "¹ÌÄÉ´Ð",  // mechanic
+	4059 => "±æ·ÎÆ¾Å©·Î½º", // guillotine
+	4060 => "·é³ªÀÌÆ®",      // rune knight
+	4061 => "¿ö·Ï",      // warlock
+	4062 => "·¹ÀÎÀú",        // ranger
+	4063 => "¾ÆÅ©ºñ¼ó",   // arch bishop
+	4064 => "¹ÌÄÉ´Ð",  // mechanic
+	4065 => "±æ·ÎÆ¾Å©·Î½º", // guillotine
+	4066 => "·Î¾â°¡µå",          // royal guard
+	4067 => "¼Ò¼­·¯",       // sorcerer
+	4068 => "¹Î½ºÆ®·²",          // minstrel
+	4069 => "¿ø´õ·¯",          // wanderer
+	4070 => "½´¶ó",          // sura
+	4071 => "Á¦³×¸¯",      // genetic
+	4072 => "½¦µµ¿ìÃ¼ÀÌ¼­",        // shadow chaser
+	4073 => "·Î¾â°¡µå",          // royal guard
+	4074 => "¼Ò¼­·¯",       // sorcerer
+	4075 => "¹Î½ºÆ®·²",          // minstrel
+	4076 => "¿ø´õ·¯",          // wanderer
+	4077 => "½´¶ó",          // sura
+	4078 => "Á¦³×¸¯",      // genetic
+	4079 => "½¦µµ¿ìÃ¼ÀÌ¼­",        // shadow chaser
 
 	// 3rd Mount
-	4080 => "ÆäÄÚ·Î³ª",        // peco rune knight
-	4081 => "ÆäÄÚ·Î³ª",        // peco rune knight
+	4080 => "·é³ªÀÌÆ®",        // peco rune knight
+	4081 => "·é³ªÀÌÆ®",        // peco rune knight
 	4082 => "ÆäÄÚÆÈ¶ó",        // royal guard
 	4083 => "ÆäÄÚÆÈ¶ó",        // royal guard
-	4084 => "½º³ªÀÌÆÛ",        // ranger
-	4085 => "½º³ªÀÌÆÛ",        // ranger
-	4086 => "È ÀÌÆ®½º¹Ì½º",  // mechanic CHECK THIS
-	4087 => "È ÀÌÆ®½º¹Ì½º",  // mechanic CHECK THIS
+	4084 => "·¹ÀÎÀú",        // ranger
+	4085 => "·¹ÀÎÀú",        // ranger
+	4086 => "¹ÌÄÉ´Ð",  // mechanic CHECK THIS
+	4087 => "¹ÌÄÉ´Ð",  // mechanic CHECK THIS
 
 	// 3rd Baby
-	4096 => "·Îµå³ªÀÌÆ®",      // rune knight
-	4097 => "ÇÏÀÌÀ§Àúµå",      // warlock
-	4098 => "½º³ªÀÌÆÛ",        // ranger
-	4099 => "ÇÏÀÌÇÁ¸®½ºÆ®",  // arch bishop
-	4100 => "È ÀÌÆ®½º¹Ì½º",  // mechanic
-	4101 => "¾î¼¼½ÅÅ©·Î½º", // guillotine
-	4102 => "ÆÈ¶óµò",          // royal guard
-	4103 => "ÇÁ·ÎÆä¼",       // sorcerer
-	4104 => "Å©¶ó¿î",          // minstrel
-	4105 => "Áý½Ã",          // wanderer
-	4106 => "Ã¨ÇÇ¿Â",          // sura
-	4107 => "Å©¸®¿¡ÀÌÅÍ",      // genetic
-	4108 => "½ºÅäÄ¿",        // shadow chaser
+	4096 => "·é³ªÀÌÆ®",      // rune knight
+	4097 => "¿ö·Ï",      // warlock
+	4098 => "·¹ÀÎÀú",        // ranger
+	4099 => "¾ÆÅ©ºñ¼ó",  // arch bishop
+	4100 => "¹ÌÄÉ´Ð",  // mechanic
+	4101 => "±æ·ÎÆ¾Å©·Î½º", // guillotine
+	4102 => "·Î¾â°¡µå",          // royal guard
+	4103 => "¼Ò¼­·¯",       // sorcerer
+	4104 => "¹Î½ºÆ®·²",          // minstrel
+	4105 => "¿ø´õ·¯",          // wanderer
+	4106 => "½´¶ó",          // sura
+	4107 => "Á¦³×¸¯",      // genetic
+	4108 => "½¦µµ¿ìÃ¼ÀÌ¼­",        // shadow chaser
 
 	// 3rd Baby mount
-	4109 => "ÆäÄÚ·Î³ª",        // peco rune knight
-	4110 => "ÆäÄÚÆÈ¶ó",        // royal guard
-	4111 => "½º³ªÀÌÆÛ",        // ranger
-	4112 => "È ÀÌÆ®½º¹Ì½º",  // mechanic CHECK THIS
+	4109 => "·é³ªÀÌÆ®",        // peco rune knight
+	4110 => "·Î¾â°¡µå",        // royal guard
+	4111 => "·¹ÀÎÀú",        // ranger
+	4112 => "¹ÌÄÉ´Ð",  // mechanic CHECK THIS
 
 	4190 => "½´ÆÛ³ëºñ½º",    // Super Novice extend ?
 	4191 => "½´ÆÛ³ëºñ½º",
 
-	//Job_Kagerou	4211
-	//Job_Oboro	4212
+	4211 => "kagerou",    //Job_Kagerou	4211
+	4212 => "oboro",    //Job_Oboro	4212
+
+	4215 => "½´ÆÛ³ëºñ½º",    //Job_Rebellion	4215
+
+	4218 => "½´ÆÛ³ëºñ½º"    //Job_summoner	4218
 );
