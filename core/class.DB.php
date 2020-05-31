@@ -108,6 +108,11 @@ final class DB
 		if( empty(self::$pals) ) {
 			self::$pals    = require_once( self::$path . 'pals.php');
 		}
+		if( empty(self::$robes['inherit']) ) {
+			self::$robes['inherit'] = require_once( self::$path . 'inherit.robe.php');
+		}
+		if( !empty(self::$robes['inherit'][$id]) )
+			$id = self::$robes['inherit'][$id];
 
 		if ( $pal && isset(self::$pals[$id]) ) {
 			return "data/palette/¸ö/". self::$pals[$id] ."_{$sex}_{$pal}.pal";
@@ -170,6 +175,11 @@ final class DB
 
 		if( empty(self::$shield))  self::$shield  = require_once( self::$path . 'shield.php');
 		if( empty(self::$body) )   self::$body    = require_once( self::$path . 'body.php');
+		if( empty(self::$robes['inherit']) ) {
+			self::$robes['inherit'] = require_once( self::$path . 'inherit.robe.php');
+		}
+		if( !empty(self::$robes['inherit'][$job_id]) )
+			$job_id = self::$robes['inherit'][$job_id];
 
 		$shield_id = isset(self::$shield[ $shield_id ]) ? self::$shield[ $shield_id ] : $shield_id;
 		return isset(self::$body[$job_id]) ? "data/sprite/¹æÆÐ/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$shield_id}" : false;
