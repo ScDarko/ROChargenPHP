@@ -7,81 +7,82 @@
 */
 
 return array(
-	0  => "\xc3\xca\xba\xb8\xc0\xda",
-	1  => "\xb0\xcb\xbb\xe7",                    4002 => "\xb0\xcb\xbb\xe7",          4024 => "\xb0\xcb\xbb\xe7",
-	2  => "\xb8\xb6\xb9\xfd\xbb\xe7",            4003 => "\xb8\xb6\xb9\xfd\xbb\xe7",  4025 => "\xb8\xb6\xb9\xfd\xbb\xe7",
-	3  => "\xb1\xc3\xbc\xf6",                    4004 => "\xb1\xc3\xbc\xf6",          4026 => "\xb1\xc3\xbc\xf6",
-	4  => "\xbc\xba\xc1\xf7\xc0\xda",            4005 => "\xbc\xba\xc1\xf7\xc0\xda",  4027 => "\xbc\xba\xc1\xf7\xc0\xda",
-	5  => "\xbb\xf3\xc0\xce",                    4006 => "\xbb\xf3\xc0\xce",          4028 => "\xbb\xf3\xc0\xce",
-	6  => "\xb5\xb5\xb5\xcf",                    4007 => "\xb5\xb5\xb5\xcf",          4029 => "\xb5\xb5\xb5\xcf",
-	7  => "\xb1\xe2\xbb\xe7",                    4030 => "\xb1\xe2\xbb\xe7",
-	8  => "\xc7\xc1\xb8\xae\xbd\xba\xc6\xae",    4031 => "\xc7\xc1\xb8\xae\xbd\xba\xc6\xae",
-	9  => "\xc0\xa7\xc0\xfa\xb5\xe5",            4032 => "\xc0\xa7\xc0\xfa\xb5\xe5",
-	10 => "\xc1\xa6\xc3\xb6\xb0\xf8",            4033 => "\xc1\xa6\xc3\xb6\xb0\xf8",
-	11 => "\xc7\xe5\xc5\xcd",                    4034 => "\xc7\xe5\xc5\xcd",
-	12 => "\xbe\xee\xbc\xbc\xbd\xc5",            4035 => "\xbe\xee\xbc\xbc\xbd\xc5",
-	13 => "\xc6\xe4\xc4\xda\xc6\xe4\xc4\xda\x5f\xb1\xe2\xbb\xe7",             4036 => "\xc6\xe4\xc4\xda\xc6\xe4\xc4\xda\x5f\xb1\xe2\xbb\xe7",
-	14 => "\xc5\xa9\xb7\xe7\xbc\xbc\xc0\xcc\xb4\xf5",                         4037 => "\xc5\xa9\xb7\xe7\xbc\xbc\xc0\xcc\xb4\xf5",
-	15 => "\xb8\xf9\xc5\xa9",                                                 4038 => "\xb8\xf9\xc5\xa9",
-	16 => "\xbc\xbc\xc0\xcc\xc1\xf6",                                         4039 => "\xbc\xbc\xc0\xcc\xc1\xf6",
-	17 => "\xb7\xce\xb1\xd7",                                                 4040 =>"\xb7\xce\xb1\xd7",
-	18 => "\xbf\xac\xb1\xdd\xbc\xfa\xbb\xe7",                                 4041 => "\xbf\xac\xb1\xdd\xbc\xfa\xbb\xe7",
-	19 => "\xb9\xd9\xb5\xe5",                                                 4042 => "\xb9\xd9\xb5\xe5",
-	20 => "\xb9\xab\xc8\xf1",                                                 4043 => "\xb9\xab\xc8\xf1",
-	21 => "\xbd\xc5\xc6\xe4\xc4\xda\xc5\xa9\xb7\xe7\xbc\xbc\xc0\xcc\xb4\xf5", 4044 => "\xbd\xc5\xc6\xe4\xc4\xda\xc5\xa9\xb7\xe7\xbc\xbc\xc0\xcc\xb4\xf5",
-	22 => "\xb0\xe1\xc8\xa5",
-	23 => "\xbd\xb4\xc6\xdb\xb3\xeb\xba\xf1\xbd\xba",                         4045 => "\xbd\xb4\xc6\xdb\xb3\xeb\xba\xf1\xbd\xba",
-	24 => "\xb0\xc7\xb3\xca",
-	25 => "\xb4\xd1\xc0\xda",
-	26 => "\xbb\xea\xc5\xb8",
-	27 => "\xbf\xa9\xb8\xa7",
+0 => "초보자",
+ 1 => "검사", 4002 => "검사", 4024 => "검사",
+ 2 => "마법사", 4003 => "마법사", 4025 => "마법사",
+ 3 => "궁수", 4004 => "궁수", 4026 => "궁수",
+ 4 => "성직자", 4005 => "성직자", 4027 => "성직자",
+ 5 => "상인", 4006 => "상인", 4028 => "상인",
+ 6 => "도둑", 4007 => "도둑", 4029 => "도둑",
+ 7 => "기사", 4030 => "기사",
+ 8 => "프리스트", 4031 => "프리스트",
+ 9 => "위저드", 4032 => "위저드",
+ 10 => "제철공", 4033 => "제철공",
+ 11 => "헌터", 4034 => "헌터",
+ 12 => "어세신", 4035 => "어세신",
+ 13 => "페코페코_기사", 4036 => "페코페코_기사",
+ 14 => "크루세이더", 4037 => "크루세이더",
+ 15 => "몽크", 4038 => "몽크",
+ 16 => "세이지", 4039 => "세이지",
+ 17 => "로그", 4040 =>"로그",
+ 18 => "연금술사", 4041 => "연금술사",
+ 19 => "바드", 4042 => "바드",
+ 20 => "무희", 4043 => "무희",
+ 21 => "신페코크루세이더", 4044 => "신페코크루세이더",
+ 22 => "결혼",
+ 23 => "슈퍼노비스", 4045 => "슈퍼노비스",
+ 24 => "건너",
+ 25 => "닌자",
+ 26 => "산타",
+ 27 => "여름",
 
-	4008 => "\xb7\xce\xb5\xe5\xb3\xaa\xc0\xcc\xc6\xae",
-	4009 => "\xc7\xcf\xc0\xcc\xc7\xc1\xb8\xae",
-	4010 => "\xc7\xcf\xc0\xcc\xc0\xa7\xc0\xfa\xb5\xe5",
-	4011 => "\xc8\xad\xc0\xcc\xc6\xae\xbd\xba\xb9\xcc\xbd\xba",
-	4012 => "\xbd\xba\xb3\xaa\xc0\xcc\xc6\xdb",
-	4013 => "\xbe\xee\xbd\xd8\xbd\xc5\xc5\xa9\xb7\xce\xbd\xba",
-	4014 => "\xb7\xce\xb5\xe5\xc6\xe4\xc4\xda",
-	4015 => "\xc6\xc8\xb6\xf3\xb5\xf2",
-	4016 => "\xc3\xa8\xc7\xc7\xbf\xc2",
-	4017 => "\xc7\xc1\xb7\xce\xc6\xe4\xbc\xad",
-	4018 => "\xbd\xba\xc5\xe4\xc4\xbf",
-	4019 => "\xc5\xa9\xb8\xae\xbf\xa1\xc0\xcc\xc5\xcd",
-	4020 => "\xc5\xac\xb6\xf3\xbf\xee",
-	4021 => "\xc1\xfd\xbd\xc3",
-	4022 => "\xc6\xe4\xc4\xda\xc6\xc8\xb6\xf3\xb5\xf2",
+ 4008 => "로드나이트",
+ 4009 => "하이프리",
+ 4010 => "하이위저드",
+ 4011 => "화이트스미스",
+ 4012 => "스나이퍼",
+ 4013 => "어쌔신크로스",
+ 4014 => "로드페코",
+ 4015 => "팔라딘",
+ 4016 => "챔피온",
+ 4017 => "프로페서",
+ 4018 => "스토커",
+ 4019 => "크리에이터",
+ 4020 => "클라운",
+ 4021 => "집시",
+ 4022 => "페코팔라딘",
 
-	4046 => "\xc5\xc2\xb1\xc7\xbc\xd2\xb3\xe2",
-	4047 => "\xb1\xc7\xbc\xba",
-	4048 => "\xb1\xc7\xbc\xba\xc0\xb6\xc7\xd5",
-	4049 => "\xbc\xd2\xbf\xef\xb8\xb5\xc4\xbf",
+ 4046 => "태권소년",
+ 4047 => "권성",
+ 4048 => "권성융합",
+ 4049 => "소울링커",
 
 
-	//                normal                                                    extend                                                   baby
-	4054 => "\xb7\xe9\xb3\xaa\xc0\xcc\xc6\xae",                 4060 => "\xb7\xe9\xb3\xaa\xc0\xcc\xc6\xae",                  4096 => "\xb7\xe9\xb3\xaa\xc0\xcc\xc6\xae",     // Rune_Knight
-	4055 => "\xbf\xf6\xb7\xcf",                                 4061 => "\xbf\xf6\xb7\xcf",                                  4097 => "\xbf\xf6\xb7\xcf",                     // Warlock
-	4056 => "\xb7\xb9\xc0\xce\xc1\xae",                         4062 => "\xb7\xb9\xc0\xce\xc1\xae",                          4098 => "\xb7\xb9\xc0\xce\xc1\xae",             // Ranger
-	4057 => "\xbe\xc6\xc5\xa9\xba\xf1\xbc\xf3",                 4063 => "\xbe\xc6\xc5\xa9\xba\xf1\xbc\xf3",                  4099 => "\xbe\xc6\xc5\xa9\xba\xf1\xbc\xf3",     // Arch_Bishop
-	4058 => "\xb9\xcc\xc4\xc9\xb4\xd0",                         4064 => "\xb9\xcc\xc4\xc9\xb4\xd0",                          4100 => "\xb9\xcc\xc4\xc9\xb4\xd0",             // Mechanic
-	4059 => "\xb1\xe6\xb7\xce\xc6\xbe\xc5\xa9\xb7\xce\xbd\xba", 4065 => "\xb1\xe6\xb7\xce\xc6\xbe\xc5\xa9\xb7\xce\xbd\xba",  4101 => "\xb1\xe6\xb7\xce\xc6\xbe\xc5\xa9\xb7\xce\xbd\xba�", // Guillotine_Cross
+ // normal extend baby
+ 4054 => "룬나이트", 4060 => "룬나이트", 4096 => "룬나이트", // Rune_Knight
+ 4055 => "워록", 4061 => "워록", 4097 => "워록", // Warlock
+ 4056 => "레인져", 4062 => "레인져", 4098 => "레인져", // Ranger
+ 4057 => "아크비숍", 4063 => "아크비숍", 4099 => "아크비숍", // Arch_Bishop
+ 4058 => "미케닉", 4064 => "미케닉", 4100 => "미케닉", // Mechanic
+ 4059 => "길로틴크로스", 4065 => "길로틴크로스", 4101 => "길로틴크로스", // Guillotine_Cross
 
-	4066 => "\xb0\xa1\xb5\xe5",                                 4073 => "\xb0\xa1\xb5\xe5",                                  4102 => "\xb0\xa1\xb5\xe5",                 // Royal_Guard
-	4067 => "\xbc\xd2\xbc\xad\xb7\xaf",                         4074 => "\xbc\xd2\xbc\xad\xb7\xaf",                          4103 => "\xbc\xd2\xbc\xad\xb7\xaf",         // Sorcerer
-	4068 => "\xb9\xce\xbd\xba\xc6\xae\xb7\xb2",                 4075 => "\xb9\xce\xbd\xba\xc6\xae\xb7\xb2",                  4104 => "\xb9\xce\xbd\xba\xc6\xae\xb7\xb2", // Minstrel
-	4069 => "\xbf\xf8\xb4\xf5\xb7\xaf",                         4076 => "\xbf\xf8\xb4\xf5\xb7\xaf",                          4105 => "\xbf\xf8\xb4\xf5\xb7\xaf",         // Wanderer
-	4070 => "\xbd\xb4\xb6\xf3",                                 4077 => "\xbd\xb4\xb6\xf3",                                  4106 => "\xbd\xb4\xb6\xf3",                 // Sura
-	4071 => "\xc1\xa6\xb3\xd7\xb8\xaf",                         4078 => "\xc1\xa6\xb3\xd7\xb8\xaf",                          4107 => "\xc1\xa6\xb3\xd7\xb8\xaf",         // Genetic
-	4072 => "\xbd\xa6\xb5\xb5\xbf\xec\xc3\xbc\xc0\xcc\xbc\xad", 4079 => "\xbd\xa6\xb5\xb5\xbf\xec\xc3\xbc\xc0\xcc\xbc\xad",  4108 => "\xbd\xa6\xb5\xb5\xbf\xec\xc3\xbc\xc0\xcc\xbc\xad",// Shadow_Chaser
+ 4066 => "가드", 4073 => "가드", 4102 => "가드", // Royal_Guard
+ 4067 => "소서러", 4074 => "소서러", 4103 => "소서러", // Sorcerer
+ 4068 => "민스트럴", 4075 => "민스트럴", 4104 => "민스트럴", // Minstrel
+ 4069 => "원더러", 4076 => "원더러", 4105 => "원더러", // Wanderer
+ 4070 => "슈라", 4077 => "슈라", 4106 => "슈라", // Sura
+ 4071 => "제네릭", 4078 => "제네릭", 4107 => "제네릭", // Genetic
+ 4072 => "쉐도우체이서", 4079 => "쉐도우체이서", 4108 => "쉐도우체이서",// Shadow_Chaser
 
-	// Mount
-	4080 => "\xb7\xe9\xb3\xaa\xc0\xcc\xc6\xae\xbb\xda\xb6\xec", 4081 => "\xb7\xe9\xb3\xaa\xc0\xcc\xc6\xae\xbb\xda\xb6\xec",  4109 => "\xb7\xe9\xb3\xaa\xc0\xcc\xc6\xae\xbb\xda\xb6\xec", // Rune_Knight2
-	4082 => "\xb1\xd7\xb8\xae\xc6\xf9\xb0\xa1\xb5\xe5",         4083 => "\xb1\xd7\xb8\xae\xc6\xf9\xb0\xa1\xb5\xe5",          4110 => "\xb1\xd7\xb8\xae\xc6\xf9\xb0\xa1\xb5\xe5",         // Royal_Guard2
-	4084 => "\xb7\xb9\xc0\xce\xc1\xae\xb4\xc1\xb4\xeb",         4085 => "\xb7\xb9\xc0\xce\xc1\xae\xb4\xc1\xb4\xeb",          4111 => "\xb7\xb9\xc0\xce\xc1\xae\xb4\xc1\xb4\xeb",         // Ranger2
-	4086 => "\xb9\xcc\xc4\xc9\xb4\xd0\xb8\xe4\xb5\xc5\xc1\xf6", 4087 => "\xb9\xcc\xc4\xc9\xb4\xd0\xb8\xe4\xb5\xc5\xc1\xf6",  4112 => "\xb9\xcc\xc4\xc9\xb4\xd0\xb8\xe4\xb5\xc5\xc1\xf6", // Mechanic2
+ // Mount
+ 4080 => "룬나이트쁘띠", 4081 => "룬나이트쁘띠", 4109 => "룬나이트쁘띠", // Rune_Knight2
+ 4082 => "그리폰가드", 4083 => "그리폰가드", 4110 => "그리폰가드", // Royal_Guard2
+ 4084 => "레인져늑대", 4085 => "레인져늑대", 4111 => "레인져늑대", // Ranger2
+ 4086 => "미케닉멧돼지", 4087 => "미케닉멧돼지", 4112 => "미케닉멧돼지", // Mechanic2
 
-	4190 => "\xbd\xb4\xc6\xdb\xb3\xeb\xba\xf1\xbd\xba\xc6\xf7\xb8\xb5", 4191 => "\xbd\xb4\xc6\xdb\xb3\xeb\xba\xf1\xbd\xba\xc6\xf7\xb8\xb5", // Super_Baby_E
+ 4190 => "슈퍼노비스포링", 4191 => "슈퍼노비스포링", // Super_Baby_E
 
-	4211 => "kagerou", //Job_Kagerou	4211
-	4212 => "oboro"    //Job_Oboro	4212
+ 4211 => "kagerou", //Job_Kagerou 4211
+ 4212 => "oboro" //Job_Oboro 4212
+
 );

@@ -73,7 +73,7 @@ final class DB
 			self::$mobs    = require_once( self::$path . 'mobs.php');
 		}
 
-		return "data/sprite/\xb8\xf3\xbd\xba\xc5\xcd/" . strtolower(self::$mobs[ isset(self::$mobs[$id]) ? $id : 1002 ]);
+		return "data/sprite/몬스터/" . strtolower(self::$mobs[ isset(self::$mobs[$id]) ? $id : 1002 ]);
 	}
 
 	// Return pet accessory path
@@ -84,7 +84,7 @@ final class DB
 			self::$pets    = require_once( self::$path . 'pets.php');
 		}
 
-		return isset(self::$pets[$id]) ? "data/sprite/\xb8\xf3\xbd\xba\xc5\xcd/" . self::$pets[$id] : false;
+		return isset(self::$pets[$id]) ? "data/sprite/몬스터/" . self::$pets[$id] : false;
 	}
 
 	// Return body path
@@ -97,7 +97,7 @@ final class DB
 			self::$body    = require_once( self::$path . 'body.php');
 		}
 
-		return "data/sprite/\xc0\xce\xb0\xa3\xc1\xb7/\xb8\xf6\xc5\xeb/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}";
+		return "data/sprite/인간족/몸통/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}";
 	}
 
 	// Return body pal path
@@ -110,7 +110,7 @@ final class DB
 		}
 
 		if ( $pal && isset(self::$pals[$id]) ) {
-			return "data/palette/\xb8\xf6/". self::$pals[$id] ."_{$sex}_{$pal}.pal";
+			return "data/palette/몸/". self::$pals[$id] ."_{$sex}_{$pal}.pal";
 		}
 
 		return false;
@@ -129,14 +129,14 @@ final class DB
 
 		$id   = isset(self::$hair[$sex][$id]) ? self::$hair[$sex][$id] : 2;
 		*/
-		return "data/sprite/\xc0\xce\xb0\xa3\xc1\xb7/\xb8\xd3\xb8\xae\xc5\xeb/{$_sex}/{$id}_{$_sex}";
+		return "data/sprite/인간족/머리통/{$_sex}/{$id}_{$_sex}";
 	}
 
 	// Return head pal path
 	static public function get_head_pal_path($id,$sex,$pal)
 	{
 		$sex = self::$ascii_sex[$sex];
-		return $pal ? "data/palette/\xb8\xd3\xb8\xae/\xb8\xd3\xb8\xae{$id}_{$sex}_{$pal}.pal" : false;
+		return $pal ? "data/palette/머리/머리{$id}_{$sex}_{$pal}.pal" : false;
 	}
 
 	// Return hat path
@@ -148,7 +148,7 @@ final class DB
 			self::$hats    = require_once( self::$path . 'hats.php');
 		}
 
-		return isset(self::$hats[$id]) ? "data/sprite/\xbe\xc7\xbc\xbc\xbb\xe7\xb8\xae/{$sex}/{$sex}_" . self::$hats[$id] : false;
+		return isset(self::$hats[$id]) ? "data/sprite/악세사리/{$sex}/{$sex}_" . self::$hats[$id] : false;
 	}
 
 	// Return weapon path
@@ -160,7 +160,7 @@ final class DB
 		if( empty(self::$body) )   self::$body    = require_once( self::$path . 'body.php');
 
 		$weapon_id = isset(self::$weapon[$weapon_id]) ? self::$weapon[$weapon_id] : $weapon_id;
-		return isset(self::$body[$job_id]) ? "data/sprite/\xc0\xce\xb0\xa3\xc1\xb7/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$weapon_id}" : false;
+		return isset(self::$body[$job_id]) ? "data/sprite/인간족/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$weapon_id}" : false;
 	}
 
 	// Return shield path
@@ -172,7 +172,7 @@ final class DB
 		if( empty(self::$body) )   self::$body    = require_once( self::$path . 'body.php');
 
 		$shield_id = isset(self::$shield[ $shield_id ]) ? self::$shield[ $shield_id ] : $shield_id;
-		return isset(self::$body[$job_id]) ? "data/sprite/\xb9\xe6\xc6\xd0/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$shield_id}" : false;
+		return isset(self::$body[$job_id]) ? "data/sprite/방패/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$shield_id}" : false;
 	}
 
 	// Return robe path
@@ -189,7 +189,7 @@ final class DB
 			return false;
 		}
 
-		return "data/sprite/\xb7\xce\xba\xea/". self::$robes['list'][$robe_id]['name'] ."/{$sex}/". self::$body[$job_id] ."_{$sex}";
+		return "data/sprite/로브/". self::$robes['list'][$robe_id]['name'] ."/{$sex}/". self::$body[$job_id] ."_{$sex}";
 	}
 
 	// Return robe zIndex
