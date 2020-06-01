@@ -134,6 +134,9 @@ abstract class RORender
 		if ( !empty($param['path']) )
 		{
 			$file_spr = Client::getFile( $param['path'] . '.spr' );
+			if( $file_spr === false ) {
+				$file_spr = Client::getFile( $param['path'] . '.Spr' );
+			}
 			$file_act = Client::getFile( $param['path'] . '.act' );
 		}
 
