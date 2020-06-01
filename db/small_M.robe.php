@@ -12,14 +12,18 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	24 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
 		10 => array( 0, 1, 2, 3, 4 ),
 		14 => array( 0, 1, 2, 3, 4 )
 	),
-
+	4215 => array(
+		2 => array( 0, 1, 2 ),
+		6 => array( 0, 1, 2 ),
+		10 => array( 0, 1, 2, 3, 4 ),
+		14 => array( 0, 1, 2, 3, 4 )
+	),
 	1 => array(
 		10 => array( 0, 4, 5, 6, 7 ),
 		14 => array( 0, 4, 5, 6, 7 ),
@@ -46,14 +50,12 @@ return array(
 		100 => array( 0, 1, 2, 3, 4, 5 ),
 		101 => array( 0, 1, 2, 3, 4, 5 )
 	),
-
 	22 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
 		10 => array( 0, 1, 2, 6, 7 ),
 		14 => array( 0, 1, 2, 6, 7 )
 	),
-
 	3 => array(
 		10 => array( 0, 5, 7, 8 ),
 		14 => array( 0, 5, 7, 8 ),
@@ -114,19 +116,16 @@ return array(
 		102 => array( 0, 1, 2, 3, 4, 5 ),
 		103 => array( 0, 1, 2, 3, 4, 5 )
 	),
-
 	4047 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 )
 	),
-
 	4048 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
 		10 => array( 0, 1, 2, 3, 4, 5, 6, 7 ),
 		14 => array( 0, 1, 2, 3, 4, 5, 6, 7 )
 	),
-
 	4082 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -135,7 +134,6 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	7 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -160,7 +158,6 @@ return array(
 		100 => array( 0, 1, 2, 3, 4, 5 ),
 		101 => array( 0, 1, 2, 3, 4, 5 )
 	),
-
 	4059 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -169,12 +166,10 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	25 => array(
 		10 => array( 7, 8 ),
 		14 => array( 7, 8 )
 	),
-
 	6 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -187,7 +182,6 @@ return array(
 		94 => array( 0, 1 ),
 		95 => array( 0, 1 )
 	),
-
 	4056 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -196,7 +190,6 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	17 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -217,7 +210,6 @@ return array(
 		94 => array( 0, 1 ),
 		95 => array( 0, 1 )
 	),
-
 	4008 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -237,14 +229,12 @@ return array(
 		100 => array( 0, 1, 2, 3, 4, 5 ),
 		101 => array( 0, 1, 2, 3, 4, 5 )
 	),
-
 	4054 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
 		10 => array( 0, 1, 2, 3, 4, 5, 6, 7 ),
 		14 => array( 0, 1, 2, 3, 4, 5, 6, 7 )
 	),
-
 	15 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -265,17 +255,14 @@ return array(
 		102 => array( 0, 1, 3, 5 ),
 		103 => array( 0, 1, 3, 5 )
 	),
-
 	4058 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 )
 	),
-
 	4068 => array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	19 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -284,17 +271,14 @@ return array(
 		92 => array( 0, 1, 2, 3, 4, 5, 6, 7 ),
 		93 => array( 0, 1, 2, 3, 4, 5, 6, 7 )
 	),
-
 	5 => array(
 		10 => array( 0, 1, 2, 7 ),
 		14 => array( 0, 1, 2, 7 )
 	),
-
 	4 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 )
 	),
-
 	16 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -309,7 +293,6 @@ return array(
 		94 => array( 0, 1, 2, 3, 4, 5, 6, 7 ),
 		95 => array( 0, 1, 2, 3, 4, 5, 6, 7 )
 	),
-
 	4067 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -318,7 +301,6 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	4049 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -327,7 +309,6 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	4072 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -336,7 +317,6 @@ return array(
 		44 => array( 1, 2 ),
 		45 => array( 1, 2 )
 	),
-
 	4070 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -353,7 +333,6 @@ return array(
 		92 => array( 1, 2, 3, 4 ),
 		93 => array( 1, 2, 3, 4 )
 	),
-
 	4012 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -369,7 +348,6 @@ return array(
 		102 => array( 4 ),
 		103 => array( 4 )
 	),
-
 	4018 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -406,7 +384,6 @@ return array(
 		94 => array( 0, 1 ),
 		95 => array( 0, 1 )
 	),
-
 	4057 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -415,7 +392,6 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	18 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -432,7 +408,6 @@ return array(
 		94 => array( 5, 6, 7 ),
 		95 => array( 5, 6, 7 )
 	),
-
 	12 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -463,7 +438,6 @@ return array(
 		102 => array( 1 ),
 		103 => array( 1 )
 	),
-
 	4013 => array(
 		10 => array( 1, 2, 3 ),
 		14 => array( 1, 2, 3 ),
@@ -476,14 +450,12 @@ return array(
 		94 => array( 6, 7 ),
 		95 => array( 6, 7 )
 	),
-
 	27 => array(
 		10 => array( 4, 5, 6 ),
 		14 => array( 4, 5, 6 ),
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	4055 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -492,7 +464,6 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
 	9 => array(
 		10 => array( 1, 2, 3, 4 ),
 		14 => array( 1, 2, 3, 4 ),
@@ -501,7 +472,6 @@ return array(
 		86 => array( 1, 2, 3 ),
 		87 => array( 1, 2, 3 )
 	),
-
 	4071 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -510,10 +480,7 @@ return array(
 		18 => array( 0, 1, 2 ),
 		22 => array( 0, 1, 2 )
 	),
-
-	10 => array(
-	),
-
+	10 => array(},
 	4016 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -528,14 +495,12 @@ return array(
 		92 => array( 2, 3, 4 ),
 		93 => array( 2, 3, 4 )
 	),
-
 	0 => array(
 		90 => array( 1, 2, 3 ),
 		91 => array( 1, 2, 3 ),
 		92 => array( 1, 2, 3 ),
 		93 => array( 1, 2, 3 )
 	),
-
 	4019 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -576,7 +541,6 @@ return array(
 		102 => array( 0, 1, 2, 3, 4, 5 ),
 		103 => array( 0, 1, 2, 3, 4, 5 )
 	),
-
 	4020 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -610,15 +574,11 @@ return array(
 		92 => array( 3, 4, 5, 6, 7 ),
 		93 => array( 3, 4, 5, 6, 7 )
 	),
-
 	4046 => array(
 		10 => array( 4, 5, 6, 7 ),
 		14 => array( 4, 5, 6, 7 )
 	),
-
-	13 => array(
-	),
-
+	13 => array(},
 	4017 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
@@ -651,7 +611,6 @@ return array(
 		94 => array( 0, 1, 2, 3, 4, 5, 6, 7 ),
 		95 => array( 0, 1, 2, 3, 4, 5, 6, 7 )
 	),
-
 	8 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -687,7 +646,6 @@ return array(
 		101 => array( 3, 4, 5 ),
 		102 => array( 3, 4, 5 )
 	),
-
 	4010 => array(
 		80 => array( 3, 5, 6, 7, 8 ),
 		81 => array( 3, 5, 6, 7, 8 ),
@@ -702,7 +660,6 @@ return array(
 		100 => array( 2, 3, 4, 5 ),
 		101 => array( 2, 3, 4, 5 )
 	),
-
 	4009 => array(
 		10 => array( 0, 4, 5, 6, 7 ),
 		11 => array( 0, 4, 5, 6, 7 ),
@@ -723,7 +680,6 @@ return array(
 		94 => array( 0, 1, 2 ),
 		95 => array( 0, 1, 2 )
 	),
-
 	11 => array(
 		10 => array( 4, 5, 6, 7 ),
 		14 => array( 4, 5, 6, 7 ),
@@ -734,7 +690,6 @@ return array(
 		102 => array( 4 ),
 		103 => array( 4 )
 	),
-
 	4011 => array(
 		10 => array( 5, 6, 7 ),
 		14 => array( 5, 6, 7 ),
@@ -751,12 +706,11 @@ return array(
 		102 => array( 5 ),
 		103 => array( 5 )
 	),
-
 	4211 => array(
 		2 => array( 0, 1, 2 ),
 		6 => array( 0, 1, 2 ),
 		10 => array( 0, 1, 2, 3, 4, 5, 6, 7 ),
 		14 => array( 0, 1, 2, 3, 4, 5, 6, 7 )
 	)
-
+}
 );
