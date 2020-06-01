@@ -127,7 +127,7 @@ class Update_Controller extends Controller {
 
 		// Inherit
 		$extends = file_get_contents( Client::$path . "lua files/spreditinfo/2dlayerdir_f.lub");
-		preg_match_all( "/\[JOBID\.JT_([^\]]+)\]\s=\sJOBID\.JT_([^\,]+)/", $extends, $matches );
+		preg_match_all( "/\[JOBID\.JT_([^\]]+)\]\s=\sJOBID\.JT_([^\,\r\n]+)/", $extends, $matches );
 		$buffer = "";
 		$error  = "";
 
