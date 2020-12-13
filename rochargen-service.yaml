@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: rochargen
+  name: rochargen
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    service: rochargen
+  type: ClusterIP

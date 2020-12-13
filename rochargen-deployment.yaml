@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rochargen
+  labels:
+    app: rochargen
+spec:
+  selector:
+    matchLabels:
+      name: rochargen
+  template:
+    metadata:
+      labels:
+        name: rochargen
+        service: rochargen
+    spec:
+      containers:
+      - args:
+        image: rochargen
+        imagePullPolicy: Always
+        name: rochargen
+        ports:
+        - containerPort: 80
+        # envFrom:
+        #   - configMapRef:
+        #       name: rochargen-env
