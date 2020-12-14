@@ -14,6 +14,7 @@ defined("__ROOT__") OR die();
 class Controller
 {
 	static public $hostname    = "";
+	static public $port        = "";
 	static public $database    = "";
 	static public $username    = "";
 	static public $password    = "";
@@ -73,10 +74,9 @@ class Controller
 	public function loadDatabase()
 	{
 		Debug::write('Connecting to DB....', 'title');
-
 		try {
 			$this->db   = new PDO(
-				"mysql:host=". self::$hostname .";dbname=". self::$database,
+				"mysql:host=". self::$hostname .";port=". self::$port .";dbname=". self::$database,
 				self::$username, self::$password
 			);
 		} catch (PDOException $e) {
