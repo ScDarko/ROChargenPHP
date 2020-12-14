@@ -21,6 +21,18 @@ spec:
         name: rochargen
         ports:
         - containerPort: 80
-        # envFrom:
-        #   - configMapRef:
-        #       name: rochargen-env
+        volumeMounts:
+        - name: grf-files
+          mountPath: /grf-files
+        - name: data-folder
+          mountPath: /var/www/html/client/data
+        envFrom:
+          - configMapRef:
+              name: rochargen-env
+      volumes:
+      - name: grf-files
+        persistentVolumeClaim:
+          claimName: grf-files-pvc
+      - name: data-folder
+        persistentVolumeClaim:
+          claimName: data-folder-pvc
