@@ -5,11 +5,11 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
-# - grf-files.yaml
+- data-folder.yaml
+- grf-files.yaml
 - rochargen-deployment.yaml
-- rochargen-ingress.yaml
 - rochargen-service.yaml
 
 images:
 - name: rochargen
-  newName: registry.digitalocean.com/titanro-docr/rochargen@sha256:621604e70495f199bd1d541b9de1cd0530801e083d1f90ffa45eef17cf1449c7
+  newName: registry.digitalocean.com/titanro-docr/rochargen@sha256:2108519258b0e7eecf9b82a7f7519ec01be2579818302b5de977b722d615dda3
