@@ -37,19 +37,20 @@ require_once( __ROOT__ . 'core/class.DB.php');
 
 /// Configs ---------------------------------------------------------
 //- Cache
-Cache::$path          =     __ROOT__ . "cache/"  ;   // Cache directory
-Cache::$time          =     15 * 60              ;   // cache for 15 mins (set to 0 if you want to disable cache).
+Cache::$path          =     __ROOT__ . "cache/"   ;   // Cache directory
+Cache::$time          =     15 * 60               ;   // cache for 15 mins (set to 0 if you want to disable cache).
 //- Client
-Client::$path         =     __ROOT__ . "client/" ;   // Define where your client path is (where you put your grfs, data, etc.)
-Client::$data_ini     =     "DATA.INI"           ;   // The name of your DATA.INI (to locate your grfs, if not set: grfs will not be loaded)
-Client::$AutoExtract  =     true                 ;   // If true, client will save extracted files from GRF into the data folder.
+Client::$path         =     __ROOT__ . "client/"  ;   // Define where your client path is (where you put your grfs, data, etc.)
+Client::$data_ini     =     "DATA.INI"            ;   // The name of your DATA.INI (to locate your grfs, if not set: grfs will not be loaded)
+Client::$AutoExtract  =     true                  ;   // If true, client will save extracted files from GRF into the data folder.
 //- DB
-DB::$path             =     __ROOT__ . "db/"     ;   // The db folder (where is located the lua likes files)
+DB::$path             =     __ROOT__ . "db/"      ;   // The db folder (where is located the lua likes files)
 //- Sql
-Controller::$hostname =     "127.0.0.1"          ;   // Mysql Host
-Controller::$database =     "ragnarok"           ;   // Database Name
-Controller::$username =     "ragnarok"           ;   // Database Username
-Controller::$password =     "ragnarok"           ;   // Database Pass
+Controller::$hostname =     getenv("DB_HOST")     ;   // Mysql Host
+Controller::$port =         getenv("DB_PORT")     ;   // Mysql Port
+Controller::$database =     getenv("DB_DATABASE") ;   // Database Name
+Controller::$username =     getenv("DB_USERNAME") ;   // Database Username
+Controller::$password =     getenv("DB_PASSWORD") ;   // Database Pass
 /// -----------------------------------------------------------------
 
 
