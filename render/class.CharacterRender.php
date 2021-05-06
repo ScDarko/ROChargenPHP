@@ -3,7 +3,8 @@
 /**
 * @fileoverview CharacterRender - Helper to render a character fully (include body, hair, hats, weapon, shields)
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 1.4.5
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 1.6
 */
 
 

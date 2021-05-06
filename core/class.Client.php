@@ -42,7 +42,7 @@ final class Client
 			$grfs     = array();
 
 			foreach( $data_ini['Data'] as $index => $grf_filename ) {
-				self::$grfs[$index] = new Grf($grf_filename);
+			    self::$grfs[$index] = new Grf(self::$path . $grf_filename);
 				self::$grfs[$index]->filename = $grf_filename;
 				$grfs[] = $grf_filename;
 			}

@@ -40,7 +40,7 @@ class MonsterRender extends RORender
 	 * Public access
 	 */
 	public $body_animation = 0;
-
+	
 
 	/**
 	 * Render, return an image

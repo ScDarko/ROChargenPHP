@@ -3,7 +3,8 @@
 /**
 * @fileoverview avatar.php, display an avatar with player informations
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 1.0.0
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 2.2
 */
 
 
@@ -67,9 +68,10 @@ class Avatar_Controller extends Controller {
 				char.head_top, char.head_mid, char.head_bottom,
 				char.robe, char.weapon, char.shield,
 				char.online, char.base_level, char.job_level,
-				char.sex,
+				login.sex,
 				guild.emblem_data
 			FROM `char`
+            LEFT JOIN `login` ON login.account_id = char.account_id
 			LEFT JOIN `guild` ON guild.guild_id = char.guild_id
 			WHERE char.name = ?
 			LIMIT 1",

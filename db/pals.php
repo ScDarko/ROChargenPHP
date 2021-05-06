@@ -160,5 +160,39 @@ return array(
 
 	4215 => "½´ÆÛ³ëºñ½º",    //Job_Rebellion	4215
 
-	4218 => "½´ÆÛ³ëºñ½º"    //Job_summoner	4218
+	4218 => "½´ÆÛ³ëºñ½º",    //Job_summoner	4218
+	    
+    // 4th Jobs
+    4252 => "dragon_knight", // Dragon_Knight
+    4253 => "meister", // Meister
+    4254 => "shadow_cross", // Shadow_Cross
+    4255 => "arch_mage", // Arch_Mage
+    4256 => "cardinal", // Cardinal
+    4257 => "windhawk", // Windhawk
+    4258 => "imperial_guard", // Imperial_Guard
+    4259 => "biolo", // Biolo
+    4260 => "abyss_chaser", // Abyss_Chaser
+    4261 => "elemental_master", // Elemental_Master
+    4262 => "inquisitor", // Inquisitor
+    4263 => "troubadour", // Troubadour
+    4264 => "trouvere", // Trouvere
+    4265 => "dragon_knight_riding", // Dragon_Knight_Riding
+    4266 => "meister_riding", // Meister_Riding
+    4267 => "shadow_cross_riding", // Shadow_Cross_Riding
+    4268 => "arch_mage_riding", // Arch_Mage_Riding
+    4269 => "cardinal_riding", // Cardinal_Riding
+    4270 => "windhawk_riding", // Windhawk_Riding
+    4271 => "imperial_guard_riding", // Imperial_Guard_Riding
+    4272 => "biolo_riding", // Biolo_Riding
+    4273 => "abyss_chaser_riding", // Abyss_Chaser_Riding
+    4274 => "elemental_master_riding", // Elemental_Master_Riding
+    4275 => "inquisitor_riding", // Inquisitor_Riding
+    4276 => "troubadour_riding", // Troubadour_Riding
+    4277 => "trouvere_riding", // Trouvere_Riding
+    4278 => "wolf_windhawk", // Wolf_Windhawk
+    4279 => "meister_madogear", // Meister_Madogear
+    4280 => "dragon_knight_chicken", // Dragon_knight_Chicken
+    4281 => "imperial_guard_chicken"  // Imperial_Guard_Chicken
+    
+    
 );

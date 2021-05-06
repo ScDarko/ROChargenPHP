@@ -67,9 +67,10 @@ class Signature_Controller extends Controller {
 				char.head_top, char.head_mid, char.head_bottom,
 				char.robe, char.weapon, char.shield,
 				char.online, char.base_level, char.job_level,
-				char.sex,
+				login.sex,
 				guild.emblem_data
 			FROM `char`
+			LEFT JOIN `login` ON login.account_id = char.account_id
 			LEFT JOIN `guild` ON guild.guild_id = char.guild_id
 			WHERE char.name = ?
 			LIMIT 1",

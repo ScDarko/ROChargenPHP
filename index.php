@@ -3,7 +3,8 @@
 /**
 * @fileoverview index.php, Dispatcher
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 2.1.0
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 2.2
 */
 
 
@@ -31,7 +32,7 @@ require_once( __ROOT__ . 'core/class.DB.php');
 
 
 // Set on the debug
-//Debug::enable();
+Debug::enable();
 
 
 
@@ -46,11 +47,10 @@ Client::$AutoExtract  =     true                  ;   // If true, client will sa
 //- DB
 DB::$path             =     __ROOT__ . "db/"      ;   // The db folder (where is located the lua likes files)
 //- Sql
-Controller::$hostname =     getenv("DB_HOST")     ;   // Mysql Host
-Controller::$port =         getenv("DB_PORT")     ;   // Mysql Port
-Controller::$database =     getenv("DB_DATABASE") ;   // Database Name
-Controller::$username =     getenv("DB_USERNAME") ;   // Database Username
-Controller::$password =     getenv("DB_PASSWORD") ;   // Database Pass
+Controller::$hostname =     "localhost";//getenv("DB_HOST")     ;   // Mysql Host
+Controller::$database =    "ragnarok";// getenv("DB_DATABASE") ;   // Database Name
+Controller::$username =    "ragnarok";// getenv("DB_USERNAME") ;   // Database Username
+Controller::$password =    "admin";// getenv("DB_PASSWORD") ;   // Database Pass
 /// -----------------------------------------------------------------
 
 
@@ -79,6 +79,9 @@ $routes = array();
 $routes['/character/(.*)/(\d+)/([0-7])'] = 'Character';
 $routes['/character/(.*)']               = 'Character';
 $routes['/characterhead/(.*)']           = 'CharacterHead';
+$routes['/item/(.*)']           	     = 'Item';
+$routes['/itemcollection/(.*)']          = 'ItemCollection';
+$routes['/itemdesc/(.*)']          	     = 'ItemDesc';
 $routes['/avatar/(.*)']                  = 'Avatar';
 $routes['/signature/(.*)']               = 'Signature';
 $routes['/monster/(\d+)']                = 'Monster';

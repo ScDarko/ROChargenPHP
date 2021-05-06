@@ -32,10 +32,10 @@ class Monster_Controller extends Controller {
 	 */
 	public function process($mobid)
 	{
-		header('Content-type:image/png');
+		header('Content-type:image/gif');
 		header('Cache-Control: max-age='. Cache::$time .', public');
 
-		Cache::setFilename($mobid . ".png");
+		Cache::setFilename($mobid . ".gif");
 		$content    = "";
 
 		// Load the cache file ?
@@ -66,7 +66,7 @@ class Monster_Controller extends Controller {
 		$img = $gen->render();
 
 		// Display image
-		imagepng( $img );
+		imagegif( $img );
 	}
 
 }

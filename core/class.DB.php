@@ -3,7 +3,8 @@
 /**
 * @fileoverview DB - Manage files path
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 1.5.2
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 2.2
 */
 
 final class DB
@@ -13,6 +14,9 @@ final class DB
 	static private $weapon, $shield, $robes = array();
 	static private $mobs, $pets;
 	static private $shadow;
+	static private $dorams = "도람족";
+	static private $humans = "인간족";
+	static private $isDoram = false;
 
 	static private $ascii_sex = array(
 		"M" => "남",
@@ -20,7 +24,6 @@ final class DB
 	);
 
 	static public $path = "db/";
-
 
 	// Return shadow factor
 	static public function get_shadow_factor($id) {
@@ -41,7 +44,6 @@ final class DB
 
 		return false;
 	}
-
 
 	// Return npc path
 	static public function get_npc_path($id)
@@ -91,13 +93,19 @@ final class DB
 	static public function get_body_path($id,$sex)
 	{		
 		$sex = self::$ascii_sex[$sex];
-
+		
 		// Load only if used
 		if( empty(self::$body) ) {
 			self::$body    = require_once( self::$path . 'body.php');
 		}
+		
+		self::checkIfIsDoram($id);
 
-		return "data/sprite/인간족/몸통/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}";
+		// Return either Dorams or Humans
+		$body_path = self::$isDoram ? "data/sprite/".self::$dorams."/몸통/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}"
+		                            : "data/sprite/".self::$humans."/몸통/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}";
+		return $body_path;
+		
 	}
 
 	// Return body pal path
@@ -115,7 +123,9 @@ final class DB
 			$id = self::$robes['inherit'][$id];
 
 		if ( $pal && isset(self::$pals[$id]) ) {
-			return "data/palette/몸/". self::$pals[$id] ."_{$sex}_{$pal}.pal";
+		    $body_pal_path = self::$isDoram ? "data/palette/".self::$dorams."/body/". self::$pals[$id] ."_{$sex}_{$pal}.pal"
+		                                    : "data/palette/몸/". self::$pals[$id] ."_{$sex}_{$pal}.pal"; 
+		   return $body_pal_path;
 		}
 
 		return false;
@@ -125,23 +135,23 @@ final class DB
 	static public function get_head_path($id,$sex)  
 	{
 		$_sex = self::$ascii_sex[$sex];
-
-		//Is head order only use on character creation ?
-		/*
-		if( empty(self::$hair) ) {
-			self::$hair    = require_once( self::$path . 'hair.client.php');
-		}
-
-		$id   = isset(self::$hair[$sex][$id]) ? self::$hair[$sex][$id] : 2;
-		*/
-		return "data/sprite/인간족/머리통/{$_sex}/{$id}_{$_sex}";
+		
+		// Return either Dorams or Humans
+		$head_path = self::$isDoram ? "data/sprite/".self::$dorams."/머리통/{$_sex}/{$id}_{$_sex}"
+		                            : "data/sprite/".self::$humans."/머리통/{$_sex}/{$id}_{$_sex}";
+		return $head_path;
 	}
 
 	// Return head pal path
 	static public function get_head_pal_path($id,$sex,$pal)
 	{
 		$sex = self::$ascii_sex[$sex];
-		return $pal ? "data/palette/머리/머리{$id}_{$sex}_{$pal}.pal" : false;
+		
+		// Return either Dorams or Humans
+		$head_pal_path = self::$isDoram ? "data/palette/".self::$dorams."/머리/머리{$id}_{$sex}_{$pal}.pal"
+		                                : "data/palette/머리/머리{$id}_{$sex}_{$pal}.pal" ;
+		
+		return $pal ? $head_pal_path : false;
 	}
 
 	// Return hat path
@@ -152,8 +162,11 @@ final class DB
 		if( empty(self::$hats) ) {
 			self::$hats    = require_once( self::$path . 'hats.php');
 		}
+		
+		$hat_path = self::$isDoram ? "data/sprite/악세사리/{$sex}_doram/{$sex}_" . self::$hats[$id]
+		                           : "data/sprite/악세사리/{$sex}/{$sex}_" . self::$hats[$id] ;
 
-		return isset(self::$hats[$id]) ? "data/sprite/악세사리/{$sex}/{$sex}_" . self::$hats[$id] : false;
+		return isset(self::$hats[$id]) ? $hat_path : false;
 	}
 
 	// Return weapon path
@@ -165,7 +178,11 @@ final class DB
 		if( empty(self::$body) )   self::$body    = require_once( self::$path . 'body.php');
 
 		$weapon_id = isset(self::$weapon[$weapon_id]) ? self::$weapon[$weapon_id] : $weapon_id;
-		return isset(self::$body[$job_id]) ? "data/sprite/인간족/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$weapon_id}" : false;
+		
+		$weapon_path = self::$isDoram ? "data/sprite/".self::$dorams."/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$weapon_id}"
+		                              : "data/sprite/인간족/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$weapon_id}" ;
+		
+		return isset(self::$body[$job_id]) ? $weapon_path : false;
 	}
 
 	// Return shield path
@@ -182,6 +199,7 @@ final class DB
 			$job_id = self::$robes['inherit'][$job_id];
 
 		$shield_id = isset(self::$shield[ $shield_id ]) ? self::$shield[ $shield_id ] : $shield_id;
+		
 		return isset(self::$body[$job_id]) ? "data/sprite/방패/". self::$body[$job_id] ."/". self::$body[$job_id] ."_{$sex}_{$shield_id}" : false;
 	}
 
@@ -200,6 +218,28 @@ final class DB
 		}
 
 		return "data/sprite/로브/". self::$robes['list'][$robe_id]['name'] ."/{$sex}/". self::$body[$job_id] ."_{$sex}";
+	}
+	
+	// idnum2itemresnametable path
+	static public function get_id2resname_path() {
+	    return "data/idnum2itemresnametable";
+	}
+	
+	// idnum2itemdesctable path
+	static public function get_id2desc_path() {
+	    return "data/idnum2itemdesctable";
+	}
+	
+	// Item path
+	static public function get_item_path($file_name)
+	{
+	    return "data/texture/유저인터페이스/item/{$file_name}";
+	}
+	
+	// Item Collection path
+	static public function get_item_collection_path($file_name)
+	{
+	    return "data/texture/유저인터페이스/collection/{$file_name}";
 	}
 
 	// Return robe zIndex
@@ -233,4 +273,12 @@ final class DB
 
 		return true;
 	}
+
+	// Check if is Doram
+	static public function checkIfIsDoram($id)
+	{
+	    
+	    self::$isDoram = $id >= 4218 && $id <= 4221 ? true : false ;
+	}
+
 }

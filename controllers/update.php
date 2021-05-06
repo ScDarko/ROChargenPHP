@@ -3,7 +3,8 @@
 /**
 * @fileoverview update.php, display an avatar with player informations
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 1.0.0
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 2.2
 */
 
 
@@ -14,7 +15,12 @@ defined("__ROOT__") OR die();
 
 class Update_Controller extends Controller {
 
-
+    /**
+     * Checkers
+     */
+    private static $isNew = false; // Check if this files have the new formats
+    
+    
 	/**
 	 * Process entry
 	 */
@@ -55,11 +61,11 @@ class Update_Controller extends Controller {
 		$error  = "";
 		$buffer = $this->parse_easy(array(
 			"keys" => array(
-				"lua" => "lua files/datainfo/accessoryid.lub",
+				"lua" => "lua files/datainfo/accessoryid.lua",
 				"reg" => "/ACCESSORY_([a-zA-Z0-9_-]+)(\s+)?\=(\s+)?(\d+)(,)?/"
 			),
 			"vals" => array(
-				"lua" => "lua files/datainfo/accname.lub",
+			    "lua" => "lua files/datainfo/accname.lua",
 				"reg" => "/\[ACCESSORY_IDs\.ACCESSORY_([a-zA-Z0-9_-]+)\](\s+)?=(\s+)?\"_(.*)\"(,)?/"
 			)
 		), $error );
@@ -81,11 +87,11 @@ class Update_Controller extends Controller {
 		$error  = "";
 		$buffer = $this->parse_easy(array(
 			"keys" => array(
-				"lua" => "lua files/datainfo/npcidentity.lub",
+				"lua" => "lua files/datainfo/npcidentity.lua",
 				"reg" => '/\["JT_([^"]+)"\](\s+)?\=(\s+)?(\d+)(,)?/'
 			),
 			"vals" => array(
-				"lua" => "lua files/datainfo/jobname.lub",
+				"lua" => "lua files/datainfo/jobname.lua",
 				"reg" => '/\[jobtbl\.JT_([^]]+)\](\s+)?=(\s+)?"([^"]+)"(,)?/'
 			)
 		), $error );
@@ -105,18 +111,20 @@ class Update_Controller extends Controller {
 	private function updateRobes()
 	{
 		$this->needFiles(
-			"lua files/skillinfoz/jobinheritlist.lub",
-			"lua files/spreditinfo/2dlayerdir_f.lub",
-			"lua files/spreditinfo/biglayerdir_female.lub",
-			"lua files/spreditinfo/biglayerdir_male.lub",
-			"lua files/spreditinfo/smalllayerdir_female.lub",
-			"lua files/spreditinfo/smalllayerdir_male.lub",
-			"lua files/spreditinfo/2dlayerdir_female.lub",
-			"lua files/spreditinfo/2dlayerdir_male.lub"
+			"lua files/skillinfoz/jobinheritlist.lua",
+			"lua files/spreditinfo/2dlayerdir_f.lua",
+			"lua files/spreditinfo/biglayerdir_female.lua",
+			"lua files/spreditinfo/biglayerdir_male.lua",
+			"lua files/spreditinfo/smalllayerdir_female.lua",
+			"lua files/spreditinfo/smalllayerdir_male.lua",
+			"lua files/spreditinfo/2dlayerdir_female.lua",
+			"lua files/spreditinfo/2dlayerdir_male.lua",
+		    //"lua files/datainfo/spriterobeid.lua",
+		    //"lua files/datainfo/spriterobename.lua",
 		);
 
 		$keys      = array();
-		$keys_data = file_get_contents( Client::$path . "lua files/skillinfoz/jobinheritlist.lub");
+		$keys_data = file_get_contents( Client::$path . "lua files/skillinfoz/jobinheritlist.lua");
 
 		// JT_key = val,
 		preg_match_all( "/JT_([^\s]+)(\s+)?\=(\s+)?(\d+)(,)?/", $keys_data, $matches );
@@ -126,7 +134,7 @@ class Update_Controller extends Controller {
 
 
 		// Inherit
-		$extends = file_get_contents( Client::$path . "lua files/spreditinfo/2dlayerdir_f.lub");
+		$extends = file_get_contents( Client::$path . "lua files/spreditinfo/2dlayerdir_f.lua");
 		preg_match_all( "/\[JOBID\.JT_([^\]]+)\]\s=\sJOBID\.JT_([^\,\r\n]+)/", $extends, $matches );
 		$buffer = "";
 		$error  = "";
@@ -148,17 +156,26 @@ class Update_Controller extends Controller {
 
 
 		$list = array(
-			"big_F.robe.php"     => "lua files/spreditinfo/biglayerdir_female.lub",
-			"big_M.robe.php"     => "lua files/spreditinfo/biglayerdir_male.lub",
-			"small_F.robe.php"   => "lua files/spreditinfo/smalllayerdir_female.lub",
-			"small_M.robe.php"   => "lua files/spreditinfo/smalllayerdir_male.lub",
-			"2dlayer_F.robe.php" => "lua files/spreditinfo/2dlayerdir_female.lub",
-			"2dlayer_M.robe.php" => "lua files/spreditinfo/2dlayerdir_male.lub"
+			"big_F.robe.php"     => "lua files/spreditinfo/biglayerdir_female.lua",
+			"big_M.robe.php"     => "lua files/spreditinfo/biglayerdir_male.lua",
+			"small_F.robe.php"   => "lua files/spreditinfo/smalllayerdir_female.lua",
+			"small_M.robe.php"   => "lua files/spreditinfo/smalllayerdir_male.lua",
+			"2dlayer_F.robe.php" => "lua files/spreditinfo/2dlayerdir_female.lua",
+			"2dlayer_M.robe.php" => "lua files/spreditinfo/2dlayerdir_male.lua"
 		);
 
 		foreach( $list as $php_file => $lua_file ) {
 			$content = file_get_contents( Client::$path . $lua_file );
 			$error   = "";
+			
+			// Set isNew if the file has the new format
+			if($php_file === "big_M.robe.php" || $php_file === "big_F.robe.php"){
+			    self::$isNew = true;
+			}
+			else{
+			    self::$isNew = false;
+			}
+			
 			$this->Output(
 				"Robe zIndex feature",
 				$this->parse_harder($keys, $content, $error),
@@ -218,9 +235,12 @@ class Update_Controller extends Controller {
 	{
 		$data = strstr( $data, '[' );
 
-		// [JOBID.JT_...] = { <data>
-		preg_match_all( '/\[JOBID\.JT_([^]]+)\](\s)?\=(\s)?\{/', $data, $matches );
-
+		// Verify if it has the new format
+		if(!self::$isNew){
+		    // [JOBID.JT_...] = { <data>
+		    preg_match_all( '/\[JOBID\.JT_([^]]+)\](\s)?\=(\s)?\{/', $data, $matches );
+		}
+		
 		// Remplace keys
 		foreach( $matches[0] as $index => $array ) {
 			if( !isset($keys[ $matches[1][$index] ]) ) {
@@ -230,14 +250,24 @@ class Update_Controller extends Controller {
 			$data = str_replace( $array, $keys[ $matches[1][$index] ] . " => array(", $data );
 		}
 
-		// Remove:
-		// - comment
-		// - [d] = ...   -> d => ...
-		// - some error on "}" and ","
+		/**
+		 * Remove
+		 */
+		// TODO: Remove }, at the end of the file
+		// - Comments
 		$data = preg_replace('/--([^\n]+)/', '', $data);
 		$data = preg_replace('/\[(\d+)\](\s+)?=(\s+)?\{(.*)\}(,)?/', '$1 => array($4)$5', $data);
+		$data = preg_replace('/\[(\d+)](\s+)?=(\s+)?\{(,)?/','$1 => array(', $data);
 		$data = preg_replace('/(\,)?(\s+)?\n\t\}(\,)?/', "\n\t)$3", $data );
-
+		if(self::$isNew){
+		    $data = preg_replace('/\}(,)?/','', $data);
+		}
+		else{
+		    $data = preg_replace('/\}(,)?/','),', $data);
+		}
+		
+		
+		
 		return "\t" . substr($data,0,-1);
 	}
 
@@ -253,7 +283,8 @@ class Update_Controller extends Controller {
 /**
  * @fileoverview {$title}
  * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
- * @version 1.0.0
+ * @editor Github: @sparkymod - Discord: Sparkmod#1935
+ * @version 2.2
  */
 
 {$error}

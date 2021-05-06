@@ -3,7 +3,8 @@
 /**
 * @fileoverview Debugging
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 1.0.0
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 2.2
 */
 
 final class Debug
@@ -67,7 +68,7 @@ final class Debug
 
 			if( !empty($img) ) {
 				echo '<h1>Result</h1>';
-				echo '<img src="data:image/png;base64,'. base64_encode($img) .'" alt="not able to render..." border="1"/>';
+				echo '<img src="data:image/gif;base64,'. base64_encode($img) .'" alt="not able to render..." border="1"/>';
 			}
 		}
 	}

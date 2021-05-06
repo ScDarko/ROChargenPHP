@@ -3,7 +3,8 @@
 /**
 * @fileoverview Body view id
 * @author Vincent Thibault (alias KeyWorld - Twitter: @robrowser)
-* @version 1.0.0
+* @editor Github: @sparkymod - Discord: Sparkmod#1935
+* @version 2.2
 */
 
 return array(
@@ -83,6 +84,62 @@ return array(
  4190 => "슈퍼노비스포링", 4191 => "슈퍼노비스포링", // Super_Baby_E
 
  4211 => "kagerou", //Job_Kagerou 4211
- 4212 => "oboro" //Job_Oboro 4212
+ 4212 => "oboro", //Job_Oboro 4212
 
+ 
+ 4215 => "rebellion", // Rebelion
+ 4218 => "summoner", // Summoner
+ 4219 => "cart_summoner", // Cart Summoner
+ 4220 => "summoner", // Summoner_B
+ 4221 => "cart_summoner", // Cart Summoner_B
+ 4222 => "", // Ninja_B
+ 4223 => "", // Kagerou_B
+ 4224 => "", // Oboro_B
+ 4225 => "", // Taekwon_B
+ 4226 => "", // Star_B
+ 4227 => "", // Linker_B
+ 4228 => "", // Gunslinger_B
+ 4229 => "", // Rebelion_B
+ 4238 => "", // Star2_B
+ 4239 => "", // Star_Emperor
+ 4240 => "", // Soul_Reaper
+ 4241 => "", // Star_Emperor_B
+ 4242 => "", // Soul_Reaper_B
+ 4243 => "", // Star2_Emperor_
+ 4244 => "", // Star2_Emperor_B
+
+    
+ // 4th class
+ 4252 => "dragon_knight", // Dragon_Knight
+ 4253 => "meister", // Meister
+ 4254 => "shadow_cross", // Shadow_Cross
+ 4255 => "arch_mage", // Arch_Mage
+ 4256 => "cardinal", // Cardinal
+ 4257 => "windhawk", // Windhawk
+ 4258 => "imperial_guard", // Imperial_Guard
+ 4259 => "biolo", // Biolo
+ 4260 => "abyss_chaser", // Abyss_Chaser
+ 4261 => "elemental_master", // Elemental_Master
+ 4262 => "inquisitor", // Inquisitor
+ 4263 => "troubadour", // Troubadour
+ 4264 => "trouvere", // Trouvere
+ 4265 => "dragon_knight_riding", // Dragon_Knight_Riding
+ 4266 => "meister_riding", // Meister_Riding
+ 4267 => "shadow_cross_riding", // Shadow_Cross_Riding
+ 4268 => "arch_mage_riding", // Arch_Mage_Riding
+ 4269 => "cardinal_riding", // Cardinal_Riding
+ 4270 => "windhawk_riding", // Windhawk_Riding
+ 4271 => "imperial_guard_riding", // Imperial_Guard_Riding
+ 4272 => "biolo_riding", // Biolo_Riding
+ 4273 => "abyss_chaser_riding", // Abyss_Chaser_Riding
+ 4274 => "elemental_master_riding", // Elemental_Master_Riding
+ 4275 => "inquisitor_riding", // Inquisitor_Riding
+ 4276 => "troubadour_riding", // Troubadour_Riding
+ 4277 => "trouvere_riding", // Trouvere_Riding
+ 4278 => "wolf_windhawk", // Wolf_Windhawk
+ 4279 => "meister_madogear", // Meister_Madogear
+ 4280 => "dragon_knight_chicken", // Dragon_knight_Chicken
+ 4281 => "imperial_guard_chicken"  // Imperial_Guard_Chicken
+    
+   
 );
