@@ -104,6 +104,7 @@ final class DB
 		// Return either Dorams or Humans
 		$body_path = self::$isDoram ? "data/sprite/".self::$dorams."/个烹/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}"
 		                            : "data/sprite/".self::$humans."/个烹/{$sex}/". self::$body[ isset(self::$body[$id]) ? $id : 0 ] ."_{$sex}";
+		
 		return $body_path;
 		
 	}
@@ -119,13 +120,19 @@ final class DB
 		if( empty(self::$robes['inherit']) ) {
 			self::$robes['inherit'] = require_once( self::$path . 'inherit.robe.php');
 		}
-		if( !empty(self::$robes['inherit'][$id]) )
+		if( !empty(self::$robes['inherit'][$id]) ){
 			$id = self::$robes['inherit'][$id];
-
+		}
 		if ( $pal && isset(self::$pals[$id]) ) {
 		    $body_pal_path = self::$isDoram ? "data/palette/".self::$dorams."/body/". self::$pals[$id] ."_{$sex}_{$pal}.pal"
 		                                    : "data/palette/个/". self::$pals[$id] ."_{$sex}_{$pal}.pal"; 
-		   return $body_pal_path;
+		    $validatePalPath = Client::getFile($body_pal_path);
+		    
+		    if (!$validatePalPath){
+		        self::getCustomeBodyPalPath($id,$sex,$pal);
+		    }
+		    
+		    return $body_pal_path;
 		}
 
 		return false;
@@ -281,4 +288,13 @@ final class DB
 	    self::$isDoram = $id >= 4218 && $id <= 4221 ? true : false ;
 	}
 
+	static public function getCustomeBodyPalPath($id, $sex,$pal){
+	    for ($i = 1; $i < 5; $i++) {
+	        $body_pal_path = "data/palette/个/costume_".$i."/". self::$pals[$id] ."_{$sex}_{$pal}_".$i.".pal";
+	        $validatePalPath = Client::getFile($body_pal_path);
+	        if ($validatePalPath){
+	            return $body_pal_path;
+	        }
+	    }
+	}
 }
