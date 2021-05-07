@@ -41,6 +41,7 @@ final class DB
 		else if( $id < 4000 ) return self::get_monster_path($id);
 		else if( $id < 6000 ) return false; // character
 		else if( $id < 7000 ) return self::get_homunculus_path($id);
+		else if( $id > 10000) return self::get_monster_path($id);
 
 		return false;
 	}
@@ -74,8 +75,9 @@ final class DB
 		if( empty(self::$mobs) ) {
 			self::$mobs    = require_once( self::$path . 'mobs.php');
 		}
-
-		return "data/sprite/몬스터/" . strtolower(self::$mobs[ isset(self::$mobs[$id]) ? $id : 1002 ]);
+		
+		return self::validate_path($id);
+		
 	}
 
 	// Return pet accessory path
@@ -129,7 +131,7 @@ final class DB
 		    $validatePalPath = Client::getFile($body_pal_path);
 		    
 		    if (!$validatePalPath){
-		        self::getCustomeBodyPalPath($id,$sex,$pal);
+		        self::get_custome_body_pal_path($id,$sex,$pal);
 		    }
 		    
 		    return $body_pal_path;
@@ -226,7 +228,7 @@ final class DB
 
 		return "data/sprite/로브/". self::$robes['list'][$robe_id]['name'] ."/{$sex}/". self::$body[$job_id] ."_{$sex}";
 	}
-	
+
 	// idnum2itemresnametable path
 	static public function get_id2resname_path() {
 	    return "data/idnum2itemresnametable";
@@ -288,12 +290,41 @@ final class DB
 	    self::$isDoram = $id >= 4218 && $id <= 4221 ? true : false ;
 	}
 
-	static public function getCustomeBodyPalPath($id, $sex,$pal){
+	// Get customs Palette 
+	static public function get_custome_body_pal_path($id, $sex,$pal){
 	    for ($i = 1; $i < 5; $i++) {
 	        $body_pal_path = "data/palette/몸/costume_".$i."/". self::$pals[$id] ."_{$sex}_{$pal}_".$i.".pal";
 	        $validatePalPath = Client::getFile($body_pal_path);
 	        if ($validatePalPath){
 	            return $body_pal_path;
+	        }
+	    }
+	}
+	
+	// Validate Upper and lower case for monster path
+	static public function validate_path($id){
+	    $monster_path = "data/sprite/몬스터/" . strtolower(self::$mobs[ isset(self::$mobs[$id]) ? $id : 1002 ]);
+	    $validate_path = Client::getFile($monster_path.".spr");
+	    
+	    if($validate_path){
+	        return $monster_path;
+	    }
+	    else{
+	        $monster_path = "data/sprite/몬스터/" . self::$mobs[ isset(self::$mobs[$id]) ? $id : 1002 ];
+	        $validate_path = Client::getFile($monster_path.".spr");
+	        
+	        if($validate_path){
+	            return $monster_path;
+	        }
+	        else{
+	            $monster_path = "data/sprite/몬스터/" . strtoupper(self::$mobs[ isset(self::$mobs[$id]) ? $id : 1002 ]);
+	            $validate_path = Client::getFile($monster_path.".spr");
+	            if($validate_path){
+	                return $monster_path;
+	            }
+	            else{
+	                return false;
+	            }
 	        }
 	    }
 	}
