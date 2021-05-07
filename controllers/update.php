@@ -88,7 +88,7 @@ class Update_Controller extends Controller {
 		$buffer = $this->parse_easy(array(
 			"keys" => array(
 				"lua" => "lua files/datainfo/npcidentity.lua",
-				"reg" => '/\["JT_([^"]+)"\](\s+)?\=(\s+)?(\d+)(,)?/'
+			    "reg" => '/JT_([a-zA-Z0-9_]+)(\s+)?\=(\s+)?(\d+)(,)?/'
 			),
 			"vals" => array(
 				"lua" => "lua files/datainfo/jobname.lua",
