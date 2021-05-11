@@ -59,11 +59,11 @@ class MonsterRender extends RORender
 
 		// Draw unit
 		$spr = DB::get_entity_path($view['class']);
-		$act = ( !empty($view['accessory']) ) ? DB::get_pet_accessory( $view['accessory'] ) : $spr . '.act';
+		$act = ( !empty($view['accessory']) ) ? DB::get_pet_accessory( $view['accessory'] ) : $spr ;
 
 		$this->renderImage( $img, array(
 			"spr" => $spr . '.spr',
-			"act" => $act
+		    "act" => $act . '.act'
 		));
 
 		// Return resulted image

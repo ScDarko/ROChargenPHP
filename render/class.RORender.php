@@ -96,7 +96,7 @@ abstract class RORender
 
 		// Create Image
 		$img = imagecreatetruecolor( $width, $height );
-		imagealphablending( $img, false);
+		imagealphablending( $img, true);
 		imagesavealpha( $img, true);
 
 		// Set on the background
@@ -107,9 +107,10 @@ abstract class RORender
 			self::$background_color[2],
 			self::$background_color[3]
 		);
-
+		
 		imagefill( $img, 0, 0, $transparent );
 		imagecolortransparent( $img, $transparent );
+		
 
 		return $img;
 	}
@@ -215,8 +216,9 @@ abstract class RORender
 		// If have palette, load it
 		if ( !empty($param['pal']) )
 		{
-			if ( $file_pal = Client::getFile($param['pal']) )
-				$spr->palette = file_get_contents($file_pal);
+		    if ( $file_pal = Client::getFile($param['pal']) ){
+		        $spr->palette = file_get_contents($file_pal);
+		    }
 		}
 
 		$pos        = $animation->pos[0];
